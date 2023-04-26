@@ -22,6 +22,8 @@ echo export LANG=en_US.UTF-8 >> ~/emacs.sh
 echo TERM=xterm-256color emacs -l ~/custom.elc >> ~/emacs.sh #require for gnu screen
 chmod +x ~/emacs.sh
 
+chmod 700 /tmp/emacs1000
+
 # setup spacemacs
 git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
