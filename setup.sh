@@ -16,15 +16,18 @@ sudo apt update
 #sudo apt install -y emacs-nox 
 #sudo apt install -y emacs-nox # sudo apt install -y emacs27 
 sudo apt install -y emacs27
-# .emacs.d copied above git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d #LANG is required for spacemacs home screen, else the logo is question marks echo export LANG=en_US.UTF-8 >> ~/emacs.sh echo TERM=xterm-256color emacs -l ~/src/qg/q_utils_orig/_load-all-min.elc >> ~/emacs.sh 
 #sudo apt install -y emacs27-common
 
-# .emacs.d copied above git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d #LANG is required for spacemacs home screen, else the logo is question marks echo export LANG=en_US.UTF-8 >> ~/emacs.sh echo TERM=xterm-256color emacs -l ~/src/qg/q_utils_orig/_load-all-min.elc >> ~/emacs.sh 
+#LANG is required for spacemacs home screen, else the logo is question marks 
+#echo export LANG=en_US.UTF-8 >> ~/emacs.sh 
+#echo TERM=xterm-256color emacs -l ~/custom.elc >> ~/emacs.sh 
 
-
-
-# .emacs.d copied above
+# setup spacemacs
 git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
+
+
+
 #clone other GH repos
 #NOTE: requires update to devcontainer.json https://github.com/orgs/community/discussions/36228
 cd ~/
