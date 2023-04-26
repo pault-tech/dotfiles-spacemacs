@@ -6,10 +6,9 @@ date >> /var/tmp/dotfilesetup
 #install spacevim
 #curl -sLf https://spacevim.org/install.sh | bash
 
-#emacs    
-
+#emacs
 sudo apt-get install software-properties-common
- 
+
 sudo add-apt-repository ppa:kelleyk/emacs -y 
 sudo apt update 
 
@@ -19,8 +18,9 @@ sudo apt install -y emacs27
 #sudo apt install -y emacs27-common
 
 #LANG is required for spacemacs home screen, else the logo is question marks 
-#echo export LANG=en_US.UTF-8 >> ~/emacs.sh 
-#echo TERM=xterm-256color emacs -l ~/custom.elc >> ~/emacs.sh 
+echo export LANG=en_US.UTF-8 >> ~/emacs.sh 
+echo TERM=xterm-256color emacs -l ~/custom.elc >> ~/emacs.sh #require for gnu screen
+chmod +x ~/emacs.sh
 
 # setup spacemacs
 git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
