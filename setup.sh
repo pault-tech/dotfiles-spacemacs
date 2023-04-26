@@ -25,7 +25,8 @@ sudo apt install -y emacs27
 # setup spacemacs
 git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
-
+#gnu screen
+sudo apt install screen
 
 
 #clone other GH repos
