@@ -1,4 +1,4 @@
-#sanity check
+        #sanity check
 echo setting up codespace dotfiles...
 echo setting up codespace dotfiles > /var/tmp/dotfilesetup
 date >> /var/tmp/dotfilesetup
@@ -28,7 +28,7 @@ chmod 700 /tmp/emacs1000
 git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 #gnu screen
-sudo apt install screen
+sudo apt install -y screen
 
 
 #clone other GH repos
