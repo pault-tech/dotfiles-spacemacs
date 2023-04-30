@@ -9,20 +9,21 @@ date >> /var/tmp/dotfilesetup
 #emacs
 sudo apt-get install software-properties-common
 
-sudo add-apt-repository ppa:kelleyk/emacs -y 
-sudo apt update 
+sudo add-apt-repository ppa:kelleyk/emacs -y
+sudo apt update
 
-# If you want, you can install the text-only user interface via 
+# If you want, you can install the text-only user interface via
 #sudo apt install -y emacs-nox
 sudo apt install -y emacs27
 #sudo apt install -y emacs27-common
 
-#LANG is required for spacemacs home screen, else the logo is question marks 
-echo export LANG=en_US.UTF-8 >> ~/emacs.sh 
+#LANG is required for spacemacs home screen, else the logo is question marks
+echo export LANG=en_US.UTF-8 >> ~/emacs.sh
 echo TERM=xterm-256color emacs -l ~/custom.elc >> ~/emacs.sh #require for gnu screen
 chmod +x ~/emacs.sh
 
 chmod 700 /tmp/emacs1000
+ls -l /tmp/emacs*
 
 # setup spacemacs
 git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
@@ -35,5 +36,6 @@ sudo apt install -y screen
 #NOTE: requires update to devcontainer.json https://github.com/orgs/community/discussions/36228
 cd ~/
 git clone https://github.com/pault-tech/dotfiles.git
-git clone https://github.com/pault-tech/dotfiles_spacemacs.git
+git clone https://github.com/pault-tech/dotfiles-spacemacs.git
 
+cp ~/dotfiles-spacemacs/.spacemacs ~/
