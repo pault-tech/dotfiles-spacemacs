@@ -1,4 +1,5 @@
-        #sanity check
+
+#sanity check
 echo setting up codespace dotfiles...
 echo setting up codespace dotfiles > /var/tmp/dotfilesetup
 date >> /var/tmp/dotfilesetup
@@ -20,7 +21,7 @@ sudo apt install -y emacs27
 #LANG is required for spacemacs home screen, else the logo is question marks
 echo chmod 700 /tmp/emacs1000 >> ~/emacs.sh
 echo export LANG=en_US.UTF-8 >> ~/emacs.sh
-echo TERM=xterm-256color emacs -l ~/custom.elc >> ~/emacs.sh #require for gnu screen
+echo TERM=xterm-256color emacs -l ~/custom.el >> ~/emacs.sh #require for gnu screen
 chmod +x ~/emacs.sh
 
 chmod 700 /tmp/emacs1000
