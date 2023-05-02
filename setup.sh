@@ -39,5 +39,6 @@ sudo apt install -y screen
 cd ~/
 git clone https://github.com/pault-tech/dotfiles.git
 git clone https://github.com/pault-tech/dotfiles-spacemacs.git
+git clone https://github.com/localstack/localstack-pro-samples.git
 
 cp ~/dotfiles-spacemacs/.spacemacs ~/
