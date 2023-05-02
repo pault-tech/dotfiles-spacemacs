@@ -36,13 +36,15 @@ sudo apt install -y screen
 
 #clone other GH repos
 #NOTE: requires update to devcontainer.json https://github.com/orgs/community/discussions/36228
-mkdir ~/gh
-cd ~/gh
+# mkdir ~/gh
+# cd ~/gh
+cd /workspaces
 git clone https://github.com/pault-tech/dotfiles.git
 git clone https://github.com/pault-tech/dotfiles-spacemacs.git
-
+#
 git clone https://github.com/localstack/localstack-pro-samples.git
 git clone https://github.com/mrwormhole/hotdog-localstack-PoC.git
+git clone https://github.com/lombardo-chcg/kafka-local-stack.git
 
 
 cp ~/dotfiles-spacemacs/.spacemacs ~/
