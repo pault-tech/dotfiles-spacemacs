@@ -18,6 +18,7 @@ sudo apt install -y emacs27
 #sudo apt install -y emacs27-common
 
 #LANG is required for spacemacs home screen, else the logo is question marks
+echo chmod 700 /tmp/emacs1000 >> ~/emacs.sh
 echo export LANG=en_US.UTF-8 >> ~/emacs.sh
 echo TERM=xterm-256color emacs -l ~/custom.elc >> ~/emacs.sh #require for gnu screen
 chmod +x ~/emacs.sh
