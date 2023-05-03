@@ -18,6 +18,10 @@ sudo apt update
 sudo apt install -y emacs27
 #sudo apt install -y emacs27-common
 
+echo [user] >> ~/.gitconfig
+echo '        email = pault-tech@github.com' >> ~/.gitconfig
+echo '        name = Paul T' >> ~/.gitconfig
+
 #LANG is required for spacemacs home screen, else the logo is question marks
 echo chmod 700 /tmp/emacs1000 >> ~/emacs.sh
 echo export LANG=en_US.UTF-8 >> ~/emacs.sh
