@@ -46,4 +46,8 @@ git clone https://github.com/localstack/localstack-pro-samples.git
 git clone https://github.com/mrwormhole/hotdog-localstack-PoC.git
 git clone https://github.com/lombardo-chcg/kafka-local-stack.git
 
+#NOTE: ssh protol not supported...
+# git clone git@github.com:pault-tech/kafka-k8s-localstack.git
+# git clone git@github.com:pault-tech/b2-demo.git
+
 cp ~/dotfiles-spacemacs/.spacemacs ~/
