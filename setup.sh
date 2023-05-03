@@ -41,10 +41,11 @@ sudo apt install -y screen
 cd /workspaces
 git clone https://github.com/pault-tech/dotfiles.git
 git clone https://github.com/pault-tech/dotfiles-spacemacs.git
+git clone https://github.com/pault-tech/kafka-k8s.git
 #
 git clone https://github.com/localstack/localstack-pro-samples.git
 git clone https://github.com/mrwormhole/hotdog-localstack-PoC.git
-git clone https://github.com/lombardo-chcg/kafka-local-stack.git
+# git clone https://github.com/lombardo-chcg/kafka-local-stack.git
 
 #NOTE: ssh protol not supported...
 # git clone git@github.com:pault-tech/kafka-k8s-localstack.git
