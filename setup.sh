@@ -46,5 +46,4 @@ git clone https://github.com/localstack/localstack-pro-samples.git
 git clone https://github.com/mrwormhole/hotdog-localstack-PoC.git
 git clone https://github.com/lombardo-chcg/kafka-local-stack.git
 
-
 cp ~/dotfiles-spacemacs/.spacemacs ~/
