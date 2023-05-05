@@ -23,9 +23,9 @@ echo '        email = pault-tech@github.com' >> ~/.gitconfig
 echo '        name = Paul T' >> ~/.gitconfig
 
 #LANG is required for spacemacs home screen, else the logo is question marks
-echo chmod 700 /tmp/emacs1000 >> ~/emacs.sh
+echo chmod 700 /tmp/emacs1000 > ~/emacs.sh
 echo export LANG=en_US.UTF-8 >> ~/emacs.sh
-echo TERM=xterm-256color emacs -l ~/custom.el >> ~/emacs.sh #require for gnu screen
+echo 'while true; do TERM=xterm-256color emacs -l ~/custom.el; echo restarting; sleep 5; done'  >> ~/emacs.sh #require for gnu screen
 chmod +x ~/emacs.sh
 
 chmod 700 /tmp/emacs1000
