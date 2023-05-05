@@ -40,6 +40,9 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      ;; auto-completion
      ;; better-defaults
+;; python
+;; lsp
+     ipython-notebook
      emacs-lisp
      git
      helm
