@@ -10,13 +10,15 @@ date >> /var/tmp/dotfilesetup
 #emacs
 sudo apt-get install software-properties-common
 
-sudo add-apt-repository ppa:kelleyk/emacs -y
+#emacs v27?
+# sudo add-apt-repository ppa:kelleyk/emacs -y
 sudo apt update
 
-# If you want, you can install the text-only user interface via
-#sudo apt install -y emacs-nox
-sudo apt install -y emacs27
+# sudo apt install -y emacs27
 #sudo apt install -y emacs27-common
+
+# If you want, you can install the text-only user interface via
+sudo apt install -y emacs-nox
 
 echo [user] >> ~/.gitconfig
 echo '        email = pault-tech@github.com' >> ~/.gitconfig
