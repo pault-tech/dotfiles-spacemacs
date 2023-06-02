@@ -8,7 +8,7 @@ date >> /var/tmp/dotfilesetup
 #curl -sLf https://spacevim.org/install.sh | bash
 
 #emacs
-sudo apt-get install software-properties-common
+sudo apt-get install -y software-properties-common
 
 #emacs v27?
 # sudo add-apt-repository ppa:kelleyk/emacs -y
