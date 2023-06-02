@@ -57,4 +57,5 @@ git clone https://github.com/mrwormhole/hotdog-localstack-PoC.git
 # git clone git@github.com:pault-tech/kafka-k8s-localstack.git
 # git clone git@github.com:pault-tech/b2-demo.git
 
+#TODO: shell script to map .spacemacs configs to devcontainer templates
 cp ~/dotfiles-spacemacs/.spacemacs ~/
