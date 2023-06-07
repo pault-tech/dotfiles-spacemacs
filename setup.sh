@@ -7,12 +7,14 @@ date >> /var/tmp/dotfilesetup
 #install spacevim
 #curl -sLf https://spacevim.org/install.sh | bash
 
+sudo apt update
+
 #emacs
 sudo apt-get install -y software-properties-common
 
+#TODO: apt info grep 26 use ppa
 #emacs v27?
 # sudo add-apt-repository ppa:kelleyk/emacs -y
-sudo apt update
 
 # sudo apt install -y emacs27
 #sudo apt install -y emacs27-common
