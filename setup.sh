@@ -14,8 +14,7 @@ sudo apt-get install -y software-properties-common
 
 apt info emacs | grep Version | grep 27 && sudo apt install -y emacs-nox
 
-type emacs || ( sudo add-apt-repository ppa:kelleyk/emacs -y && sudo apt update && sudo apt install -y emacs27 ; )
-#sudo apt install -y emacs27-common
+type emacs || ( sudo add-apt-repository ppa:kelleyk/emacs -y && sudo apt update && sudo apt install -y emacs27-common && sudo apt install -y emacs27 ; )
 
 # If you want, you can install the text-only user interface via
 sudo apt install -y emacs-nox
