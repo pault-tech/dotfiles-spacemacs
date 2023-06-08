@@ -12,7 +12,7 @@ sudo apt update
 #emacs
 sudo apt-get install -y software-properties-common
 
-apt-info emacs | grep Version | grep 27 && sudo apt install -y emacs-nox
+apt info emacs | grep Version | grep 27 && sudo apt install -y emacs-nox
 
 type emacs || ( sudo add-apt-repository ppa:kelleyk/emacs -y && sudo apt update && sudo apt install -y emacs27 ; )
 #sudo apt install -y emacs27-common
