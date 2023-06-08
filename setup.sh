@@ -41,10 +41,25 @@ sudo apt install -y screen
 # mkdir ~/gh
 # cd ~/gh
 cd /workspaces
-git clone https://github.com/pault-tech/dotfiles.git
-git clone https://github.com/pault-tech/dotfiles-spacemacs.git
-git clone https://github.com/pault-tech/kafka-k8s.git
-#
+# git clone https://github.com/pault-tech/dotfiles.git
+# git clone https://github.com/pault-tech/dotfiles-spacemacs.git
+# git clone https://github.com/pault-tech/kafka-k8s.git
+
+ORG="" #default self
+ORG="pault-tech" #default self
+# set repos (gh repo list $ORG --limit 9999 --json name)
+repos=`(gh repo list --limit 9999 --json name)`
+repos_to_clone=`(echo $repos | jq -r ".[].name")`
+
+sleep 5
+
+echo "cloning repos:\n $repos_to_clone"
+for u in $repos_to_clone
+do
+	  echo "cloning $u"
+	  git clone https://github.com/$ORG/$u || echo "failed to clone $u"
+done
+
 git clone https://github.com/localstack/localstack-pro-samples.git
 git clone https://github.com/mrwormhole/hotdog-localstack-PoC.git
 # git clone https://github.com/lombardo-chcg/kafka-local-stack.git
@@ -55,3 +70,4 @@ git clone https://github.com/mrwormhole/hotdog-localstack-PoC.git
 
 #TODO: shell script to map .spacemacs configs to devcontainer templates
 cp ~/dotfiles-spacemacs/.spacemacs ~/
+
