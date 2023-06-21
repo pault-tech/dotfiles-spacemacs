@@ -71,3 +71,4 @@ git clone https://github.com/mrwormhole/hotdog-localstack-PoC.git
 #TODO: shell script to map .spacemacs configs to devcontainer templates
 cp ~/dotfiles-spacemacs/.spacemacs ~/
 
+curl "https://github.com/pault-tech?tab=stars" > pault_stars.html
