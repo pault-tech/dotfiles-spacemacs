@@ -56,7 +56,7 @@ sleep 5
 echo "cloning repos:\n $repos_to_clone"
 for u in $repos_to_clone
 do
-	  echo "cloning $u"
+	  echo "cloning $ORG repo $u"
 	  git clone https://github.com/$ORG/$u || echo "failed to clone $u"
 done
 
