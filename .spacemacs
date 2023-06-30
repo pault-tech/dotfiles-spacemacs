@@ -41,7 +41,7 @@ This function should only modify configuration layer settings."
      ;; auto-completion
      ;; better-defaults
 ;; python
-     ipython-notebook
+     ipython-notebook ;; requires jupytext and a running jupyter notebook server
 
      emacs-lisp
      git
