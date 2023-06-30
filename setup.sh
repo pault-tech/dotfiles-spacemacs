@@ -25,7 +25,7 @@ echo chmod 700 /tmp/emacs1000 > ~/emacs.sh
 echo export LANG=en_US.UTF-8 >> ~/emacs.sh
 echo 'while true; do TERM=xterm-256color emacs -l ~/custom.el; echo restarting; sleep 5; done'  >> ~/emacs.sh #require for gnu screen
 chmod +x ~/emacs.sh
-cp ~/emacs.sh ~/.local/bin/
+cp ~/emacs.sh ~/.local/bin/em
 
 chmod 700 /tmp/emacs1000
 ls -l /tmp/emacs*
