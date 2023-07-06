@@ -54,6 +54,7 @@ This function should only modify configuration layer settings."
 
      ;; ipython-notebook ;; requires a running jupyter notebook server
 
+     ;; (terraform :variables terraform-auto-format-on-save t)
 
      emacs-lisp
      git
