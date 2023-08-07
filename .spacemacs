@@ -56,7 +56,7 @@ This function should only modify configuration layer settings."
 
      ;; (terraform :variables terraform-auto-format-on-save t)
 
-     (java :variables java-backend 'lsp)
+     ;; (java :variables java-backend 'lsp)
 
      emacs-lisp
      git
