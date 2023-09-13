@@ -57,6 +57,7 @@ This function should only modify configuration layer settings."
      ;; pip install python-lsp-server
      ;; You may also be interested in installing all optional dependencies with
      ;; pip install 'python-lsp-server[all]'
+     ;; NOTE: may need to uncomment lsp below
 
      ;; ipython-notebook ;; requires a running jupyter notebook server
 
