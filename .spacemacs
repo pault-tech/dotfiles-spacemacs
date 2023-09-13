@@ -52,6 +52,12 @@ This function should only modify configuration layer settings."
 ;; You can also move to the next cell with ~SPC m g F~ and to the previous cell
 ;; with ~SPC m g B~.
 
+     ;;3.2.1. python-lsp-server
+     ;; You need to install python language server:
+     ;; pip install python-lsp-server
+     ;; You may also be interested in installing all optional dependencies with
+     ;; pip install 'python-lsp-server[all]'
+
      ;; ipython-notebook ;; requires a running jupyter notebook server
 
      ;; (terraform :variables terraform-auto-format-on-save t)
