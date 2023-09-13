@@ -17,7 +17,8 @@ apt info emacs | grep Version | grep 27 && sudo apt install -y emacs-nox
 type emacs || ( sudo add-apt-repository ppa:kelleyk/emacs -y && sudo apt update && sudo apt install -y emacs27-common && sudo apt install -y emacs27 ; )
 
 echo [user] >> ~/.gitconfig
-echo '        email = pault-tech@github.com' >> ~/.gitconfig
+#note see: https://github.com/settings/emails.pault-tech
+echo '        email = 4277512+pault-tech@users.noreply.github.com' >> ~/.gitconfig
 echo '        name = Paul T' >> ~/.gitconfig
 
 #LANG is required for spacemacs home screen, else the logo is question marks
