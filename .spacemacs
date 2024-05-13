@@ -75,6 +75,7 @@ This function should only modify configuration layer settings."
      ;; org
       (shell :variables
              shell-default-term-shell "/bin/bash"
+              ;;also set variable shell-file-name "/bin/bash"
              shell-default-height 30
              shell-default-position 'bottom)
      ;; spell-checking
