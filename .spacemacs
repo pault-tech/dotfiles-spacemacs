@@ -62,6 +62,7 @@ This function should only modify configuration layer settings."
      ;; ipython-notebook ;; requires a running jupyter notebook server
 
      ;; (terraform :variables terraform-auto-format-on-save t)
+     (shell-scripts :variablesshell-scripts-format-on-save t)
 
      ;; (java :variables java-backend 'lsp)
 
@@ -73,6 +74,8 @@ This function should only modify configuration layer settings."
      multiple-cursors
      ;; org
       (shell :variables
+             shell-default-term-shell "/bin/bash"
+              ;;also set variable shell-file-name "/bin/bash"
              shell-default-height 30
              shell-default-position 'bottom)
      ;; spell-checking
