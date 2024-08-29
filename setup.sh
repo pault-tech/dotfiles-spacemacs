@@ -12,9 +12,11 @@ sudo apt update
 #emacs
 sudo apt-get install -y software-properties-common
 
-apt info emacs | grep Version | grep 27 && sudo apt install -y emacs-nox
+# TODO: install emacs if not installed?
+# apt info emacs | grep Version | grep 27 && sudo apt install -y emacs-nox
 
-type emacs || ( sudo add-apt-repository ppa:kelleyk/emacs -y && sudo apt update && sudo apt install -y emacs27-common && sudo apt install -y emacs27 ; )
+# TODO: install emacs if not installed?
+# type emacs || ( sudo add-apt-repository ppa:kelleyk/emacs -y && sudo apt update && sudo apt install -y emacs27-common && sudo apt install -y emacs27 ; )
 
 echo [user] >> ~/.gitconfig
 #note see: https://github.com/settings/emails.pault-tech uses the noreply address
