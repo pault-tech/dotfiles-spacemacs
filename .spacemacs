@@ -40,7 +40,16 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      ;; auto-completion
      ;; better-defaults
-;; python
+
+     ;;https://github.com/syl20bnr/spacemacs/issues/16298
+     (python :variables
+             python-backend 'lsp
+             python-lsp-server 'pylsp
+             python-test-runner 'pytest
+             python-formatter 'lsp
+             python-format-on-save t
+             python-save-before-test t
+             python-sort-imports-on-save t)
 
      python ;; can open ipynb if jupytext is installed and ipython-notebook not enabled 
      ;; from python layer README
