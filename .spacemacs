@@ -53,7 +53,7 @@ This function should only modify configuration layer settings."
              python-save-before-test t
              python-sort-imports-on-save t)
 
-     python ;; can open ipynb if jupytext is installed and ipython-notebook not enabled 
+     ;; python ;; can open ipynb if jupytext is installed and ipython-notebook not enabled 
      ;; from python layer README
 ;; To use =code-cells-mode= with ipython notebook automatically you should install
 ;; [[https://github.com/mwouts/jupytext][jupytext]]. Make sure that the =ipython-notebook= layer is not used.
