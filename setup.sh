@@ -87,6 +87,7 @@ gh repo-list --type=starred > /workspaces/_starred.txt
 function install_emacs {
 
     sudo apt update
+#TODO: v28 or 29
     sudo apt install -y emacs-nox
 
 }
