@@ -93,9 +93,9 @@ function install_emacs {
 
 
 
-if [ "$1" == "help"]; then
+if [ "$1" == "help" ]; then
     echo 'usage: setup.sh [install_emacs]'
-elif [ "$1" == "install_emacs"]; then
+elif [ "$1" == "install_emacs" ]; then
     install_emacs
 else
     setup_dotfiles_spacemacs
