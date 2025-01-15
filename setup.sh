@@ -1,4 +1,7 @@
 
+function setup_dotfiles_spacemacs {
+
+
 #sanity check
 echo setting up codespace dotfiles...
 echo setting up codespace dotfiles > /var/tmp/dotfilesetup
@@ -78,3 +81,22 @@ cp ~/dotfiles-spacemacs/.spacemacs ~/
 # curl "https://github.com/pault-tech?tab=stars" > pault_stars.html
 gh ext install gh640/gh-repo-list
 gh repo-list --type=starred > /workspaces/_starred.txt
+
+}
+
+function install_emacs {
+
+    sudo apt update
+    sudo apt install -y emacs-nox
+
+}
+
+
+
+if [ "$1" == "help"]; then
+    echo 'usage: setup.sh [install_emacs]'
+elif [ "$1" == "install_emacs"]; then
+    install_emacs
+else
+    setup_dotfiles_spacemacs
+fi
