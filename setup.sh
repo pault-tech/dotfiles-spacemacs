@@ -2,7 +2,7 @@
 # usage:
 #
 # setup.sh install_emacs           Installs emacs29
-# setup.sh                         git clone spacemacs repo and launches emacs in screen m to intialize all packages
+# setup.sh                         git clone spacemacs repo and launches emacs in gnu screen m to intialize all packages
 
 function setup_dotfiles_spacemacs {
 
