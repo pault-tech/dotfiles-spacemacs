@@ -83,6 +83,10 @@ cp ~/dotfiles-spacemacs/.spacemacs ~/
 gh ext install gh640/gh-repo-list
 gh repo-list --type=starred > /workspaces/_starred.txt
 
+echo start emacs which will download all packages. this can take awhile...
+screen -dmS m 
+screen -S m -X stuff 'TERM=xterm-256color emacs\n'
+
 }
 
 function install_emacs {
@@ -93,8 +97,19 @@ function install_emacs {
 
    #TODO: is this reliable ppa?
    #TODO: prompts for mail server
-sudo add-apt-repository ppa:ubuntuhandbook1/emacs
-   sudo apt update && sudo apt install -y emacs-common && sudo apt install -y emacs-nox
+DEBIAN_FRONTEND=noninteractive sudo add-apt-repository ppa:ubuntuhandbook1/emacs
+set -x
+sudo debconf-set-selections <<< "postfix postfix/mailname string todo.hostname.com"
+sudo debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No configuration'"
+DEBIAN_FRONTEND=noninteractive sudo apt-get install --assume-yes postfix
+set +x
+
+DEBIAN_FRONTEND=noninteractive  sudo apt update && DEBIAN_FRONTEND=noninteractive sudo apt install -y emacs-common && 
+  DEBIAN_FRONTEND=noninteractive sudo apt install -y emacs-nox
+
+echo done
+sleep 2
+emacs --version
 
 }
 
