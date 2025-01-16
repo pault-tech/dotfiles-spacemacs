@@ -37,6 +37,7 @@ chmod 700 /tmp/emacs1000
 ls -l /tmp/emacs*
 
 # setup spacemacs
+ls ~/.emacs.d && printf '\n\n~/.emacs.d exists please mv that directory and retry...\n' && exit
 git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 printf "\n\n(setq vterm-always-compile-module t)" >> ~/.emacs.d/early-init.el
 #gnu screen
@@ -86,17 +87,27 @@ gh repo-list --type=starred > /workspaces/_starred.txt
 
 function install_emacs {
 
-    sudo apt update
-    sudo apt install -y emacs-nox
+# sudo apt update
+# type emacs || ( sudo add-apt-repository ppa:kelleyk/emacs -y && \
+   # sudo apt update && sudo apt install -y emacs28-common && sudo apt install -y emacs28-nox ; )
+
+   #TODO: is this reliable ppa?
+   #TODO: prompts for mail server
+sudo add-apt-repository ppa:ubuntuhandbook1/emacs
+   sudo apt update && sudo apt install -y emacs-common && sudo apt install -y emacs-nox
 
 }
 
 
 
-if [ "$1" == "help"]; then
+if [ "$1" == "help" ]; then
     echo 'usage: setup.sh [install_emacs]'
-elif [ "$1" == "install_emacs"]; then
+elif [ "$1" == "install_emacs" ]; then
+    echo install_emacs
+    sleep 2
     install_emacs
 else
+    echo setup_dotfiles_spacemacs
+    sleep 2
     setup_dotfiles_spacemacs
 fi
