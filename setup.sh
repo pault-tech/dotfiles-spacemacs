@@ -119,6 +119,14 @@ emacs --version
 
 }
 
+function add_folders {
+
+# code --help
+
+code --add /workspaces/gh_utils
+code --add /workspaces/csci-e-101
+
+}
 
 
 if [ "$1" == "help" ]; then
@@ -127,8 +135,22 @@ elif [ "$1" == "install_emacs" ]; then
     echo install_emacs
     sleep 2
     install_emacs
+elif [ "$1" == "add_folders" ]; then
+    echo add_folders
+    sleep 2
+    add_folders
 else
     echo setup_dotfiles_spacemacs
     sleep 2
     setup_dotfiles_spacemacs
 fi
+
+
+
+
+
+
+
+
+
+
