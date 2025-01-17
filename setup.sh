@@ -30,6 +30,7 @@ echo [user] >> ~/.gitconfig
 #note see: https://github.com/settings/emails.pault-tech uses the noreply address
 echo '        email = 4277512+pault-tech@users.noreply.github.com' >> ~/.gitconfig
 echo '        name = Paul T' >> ~/.gitconfig
+echo '#avoid error: server-ensure-safe-dir: ‘/run/user/1000/emacs’ is not a safe directory because  it is not owned by you (owner = System administrator (0))' >> ~/.gitconfig
 
 #LANG is required for spacemacs home screen, else the logo is question marks
 echo chmod 700 /tmp/emacs1000 > ~/emacs.sh
