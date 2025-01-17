@@ -28,9 +28,19 @@ sudo apt-get install -y software-properties-common
 
 echo [user] >> ~/.gitconfig
 #note see: https://github.com/settings/emails.pault-tech uses the noreply address
-echo '        email = 4277512+pault-tech@users.noreply.github.com' >> ~/.gitconfig
-echo '        name = Paul T' >> ~/.gitconfig
-echo '#avoid error: server-ensure-safe-dir: ‘/run/user/1000/emacs’ is not a safe directory because  it is not owned by you (owner = System administrator (0))' >> ~/.gitconfig
+IFS=  && read -r -d '' TXT << EOM
+[user]
+  email = 4277512+pault-tech@users.noreply.github.com
+  name = Paul T
+
+#avoid error: server-ensure-safe-dir: ‘/run/user/1000/emacs’ is not a safe directory because  it is not owned by you (owner = System administrator (0))'
+#see https://www.reddit.com/r/emacs/comments/18ig37r/magit_error_when_commiting/
+#NOTE: 2025/01 below does not seem to fix above error, in lieu using fix in ~/custom.el
+[safe]
+  directory = /tmp/emacs1000/
+	# directory = "*"
+EOM
+echo "$TXT" >> ~/.gitconfig
 
 #LANG is required for spacemacs home screen, else the logo is question marks
 echo chmod 700 /tmp/emacs1000 > ~/emacs.sh
