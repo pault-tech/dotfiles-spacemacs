@@ -152,7 +152,7 @@ elif [ "$1" == "add_folders" ]; then
     echo add_folders
     sleep 2
     add_folders
-elif [ "$1" == "sup" && "$2" == "2" ]; then
+elif [ "$1" == "sup" ] && [ "$2" == "2" ]; then
     echo sup 2 setup codespace after restart
     sleep 2
     add_folders
