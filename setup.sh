@@ -137,6 +137,7 @@ function add_folders {
 
 code --add /workspaces/gh_utils
 code --add /workspaces/csci-e-101
+code --add ~/dotfiles-spacemacs
 
 }
 
@@ -150,6 +151,11 @@ elif [ "$1" == "install_emacs" ]; then
 elif [ "$1" == "add_folders" ]; then
     echo add_folders
     sleep 2
+    add_folders
+elif [ "$1" == "sup" ]; then
+    echo sup setup
+    install_emacs
+    setup_dotfiles_spacemacs
     add_folders
 else
     echo setup_dotfiles_spacemacs
