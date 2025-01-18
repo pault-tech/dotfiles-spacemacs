@@ -151,6 +151,12 @@ elif [ "$1" == "add_folders" ]; then
     echo add_folders
     sleep 2
     add_folders
+elif [ "$1" == "sup" ]; then
+    echo sup: setup all
+    sleep 2
+    install_emacs
+    setup_dotfiles_spacemacs
+    add_folders
 else
     echo setup_dotfiles_spacemacs
     sleep 2
