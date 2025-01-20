@@ -436,6 +436,7 @@ See variable `server-auth-dir' for details."
 
 
 
+(global-set-key "i" (quote find-grep-symbol-at-point))
 
 (setq vc-follow-symlinks t)
 (find-file "/workspaces/" )
