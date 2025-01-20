@@ -47,6 +47,7 @@ echo chmod 700 /tmp/emacs1000 > ~/emacs.sh
 echo export LANG=en_US.UTF-8 >> ~/emacs.sh
 echo 'source ~/.profile; while true; do TERM=xterm-256color emacs -nw -l ~/custom.el; echo restarting; sleep 5; done'  >> ~/emacs.sh #require for gnu screen
 chmod +x ~/emacs.sh
+mkdir -p ~/.local/bin
 cp ~/emacs.sh ~/.local/bin/em
 ln -s ~/dotfiles-spacemacs/custom.el ~/custom.el
 
