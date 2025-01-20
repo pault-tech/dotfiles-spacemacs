@@ -435,8 +435,34 @@ See variable `server-auth-dir' for details."
 
 
 
+(defun thing-at-point-or-point-mark ()
+  (if mark-active
+      (buffer-substring (mark) (point))
+    (thing-at-point 'symbol)))
+
+(defun query-replace-symbol-at-point (to)
+  (interactive "MReplace with:")
+  (kill-new (thing-at-point-or-point-mark))
+  (query-replace
+   (thing-at-point-or-point-mark) to nil (point) (point-max) ))
+
+(global-set-key "8" (quote query-replace-symbol-at-point))
+
+(defun find-grep-symbol-at-point ()
+  (interactive)
+  ;;(switch-to-unix-bash-command (concat "find . | xargs grep "(thing-at-point-or-point-mark)))
+  (if (thing-at-point-or-point-mark)
+      (kill-new (thing-at-point-or-point-mark)))
+  (call-interactively 'grep-find)
+  )
 
 (global-set-key "i" (quote find-grep-symbol-at-point))
+
+
+
+
+
+
 
 (setq vc-follow-symlinks t)
 (find-file "/workspaces/" )
