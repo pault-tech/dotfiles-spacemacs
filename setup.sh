@@ -45,7 +45,7 @@ echo "$TXT" >> ~/.gitconfig
 #LANG is required for spacemacs home screen, else the logo is question marks
 echo chmod 700 /tmp/emacs1000 > ~/emacs.sh
 echo export LANG=en_US.UTF-8 >> ~/emacs.sh
-echo 'source ~/.profile; while true; do TERM=xterm-256color emacs -nw -l ~/custom.el; echo "restarting. use  rm -rf ~/.emacs.d/.cache/lsp"; sleep 5; done'  >> ~/emacs.sh #require for gnu screen
+echo 'source ~/.profile; while true; do TERM=xterm-256color emacs -nw -l ~/custom.el; echo "restarting. use  rm -rf ~/.emacs.d/.cache/lsp" to reset lsp server associations; sleep 5; done'  >> ~/emacs.sh #require for gnu screen
 chmod +x ~/emacs.sh
 mkdir -p ~/.local/bin
 cp ~/emacs.sh ~/.local/bin/em
