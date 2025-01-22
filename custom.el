@@ -361,9 +361,115 @@ See variable `server-auth-dir' for details."
 
 
 
+(defvar exec-sql-exec-str-prefix "")
+(defvar exec-sql-exec-str-suffix "")
+
+(defun exec-sql (&optional dont-force-always-to-prompt-only-prompt-w-update-delete)
+  (interactive)
+  (let* ((buff (switch-to-unix-bash-command-comint-buffer-name))
+         ;; (markactive (c-region-is-active-p))
+         (markactive (region-active-p))
+         (start-para (save-excursion
+                       (backward-paragraph)
+                       (point)))
+         (end-para (save-excursion
+                     (forward-paragraph)
+                     (point)))
+         (execstr (if markactive
+                      (concat
+                       (buffer-substring-no-properties (point) (mark))"\n")
+                    (concat
+                     exec-sql-exec-str-prefix
+                     (buffer-substring-no-properties start-para end-para)
+                     exec-sql-exec-str-suffix
+                     )
+                    )))
+
+    ;; (if (exec-buffer-redirect-to (buffer-file-name))
+    ;;     (setq buff (exec-buffer-redirect-to (buffer-file-name))))
+
+    (if (or
+         (and
+          dont-force-always-to-prompt-only-prompt-w-update-delete;;nil to temporarily break this and always prompt
+          (not (string-match "delete" execstr))
+          (not (string-match "update" execstr))
+          )
+         (y-or-n-p (concat buff":      SQL contains update or delete continue? \n\n" execstr))
+         )
+        t
+      (error "Delete or update canceled"))
+
+    ;;Find the buffer to send commands to
+    (if (get-buffer-process buff)
+        (exec-sql-send-buffer-string buff execstr)
+      (if (string-match "--exec-buffer:.*\n"
+                        (buffer-substring-no-properties (point-min) (point-max)))
+          (message (concat "no process in buffer:"buff))
+        (switch-to-unix-bash-command execstr  buff
+                                     nil
+                                     ;; (exec-buffer-redirect-list-get-remote-file (buffer-file-name))
+                                     (buffer-file-name)
+                                     )
+        )
+      )
+
+    ;;(write-string-to-file "/tmp/execstr.sh" execstr)
+    (other-window 1)
+    )
+  )
+
+(defun exec-sql-send-buffer-string (buff execstr)
+  (progn
+    ;; (message (concat "submitting:  (replace-all execstr "%" "_PERCENT_")))
+    ;; (ready-message)
+    (process-send-string
+     (get-buffer-process buff) (concat execstr "\n"))
+    (switch-to-buffer-other-window buff)
+    )
+  )
+
+(global-set-key "l" (lambda ()(interactive)(exec-sql 'no-prompt)))
 
 
+
+
+
+
+(defun thing-at-point-or-point-mark ()
+  (if mark-active
+      (buffer-substring (mark) (point))
+    (thing-at-point 'symbol)))
+
+(defun query-replace-symbol-at-point (to)
+  (interactive "MReplace with:")
+  (kill-new (thing-at-point-or-point-mark))
+  (query-replace
+   (thing-at-point-or-point-mark) to nil (point) (point-max) ))
+
+(global-set-key "8" (quote query-replace-symbol-at-point))
+
+(defun find-grep-symbol-at-point ()
+  (interactive)
+  ;;(switch-to-unix-bash-command (concat "find . | xargs grep "(thing-at-point-or-point-mark)))
+  (if (thing-at-point-or-point-mark)
+      (kill-new (thing-at-point-or-point-mark)))
+  (call-interactively 'grep-find)
+  )
+
+(global-set-key "i" (quote find-grep-symbol-at-point))
+
+
+
+
+
+
+
+(setq vc-follow-symlinks t)
 (find-file "/workspaces/" )
 (find-file "/workspaces/*" 'wildcards)
 (find-file "/workspaces/*/a*build.sh" 'wildcards)
 (find-file "/workspaces/gh_utils/*.sh" 'wildcards)
+(setq vc-follow-symlinks 'ask)
+
+
+(load-file "/workspaces/gh_utils/custom.el")

@@ -44,9 +44,19 @@ echo "$TXT" >> ~/.gitconfig
 
 #LANG is required for spacemacs home screen, else the logo is question marks
 echo chmod 700 /tmp/emacs1000 > ~/emacs.sh
-echo export LANG=en_US.UTF-8 >> ~/emacs.sh
-echo 'while true; do TERM=xterm-256color emacs -nw -l ~/custom.el; echo restarting; sleep 5; done'  >> ~/emacs.sh #require for gnu screen
+IFS=  && read -r -d '' TXT << EOM
+source ~/.profile;
+export LANG=en_US.UTF-8
+while true; do
+  type pylsp || ( echo 'warning: pylsp not found for python mode, see .spacemacs for installation'  && sleep 5)
+  TERM=xterm-256color emacs -nw -l ~/custom.el;
+  echo "restarting. use  rm -rf ~/.emacs.d/.cache/lsp to reset lsp server associations"
+  sleep 5;
+done
+EOM
+echo "$TXT" >> ~/emacs.sh
 chmod +x ~/emacs.sh
+mkdir -p ~/.local/bin
 cp ~/emacs.sh ~/.local/bin/em
 ln -s ~/dotfiles-spacemacs/custom.el ~/custom.el
 
@@ -101,7 +111,7 @@ gh ext install gh640/gh-repo-list
 gh repo-list --type=starred > /workspaces/_starred.txt
 
 screen -dmS m 
-screen -S m -X stuff 'TERM=xterm-256color emacs\n'
+screen -S m -X stuff 'TERM=xterm-256color emacs --eval "(kill-emacs)" \n'
 screen -ls
 echo in screen m starting initial run of emacs which will download all packages. this can take awhile...
 
@@ -137,6 +147,7 @@ function add_folders {
 
 code --add /workspaces/gh_utils
 code --add /workspaces/csci-e-101
+code --add ~/dotfiles-spacemacs
 
 }
 
@@ -151,12 +162,12 @@ elif [ "$1" == "add_folders" ]; then
     echo add_folders
     sleep 2
     add_folders
-elif [ "$1" == "sup" && "$2" == "2" ]; then
-    echo supn: setup 2
+elif [ "$1" == "sup" ] && [ "$2" == "2" ]; then
+    echo sup 2 setup codespace after restart
     sleep 2
     add_folders
 elif [ "$1" == "sup" ]; then
-    echo sup: setup all
+    echo sup setup
     sleep 2
     install_emacs
     setup_dotfiles_spacemacs
