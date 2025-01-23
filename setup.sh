@@ -147,6 +147,7 @@ function add_folders {
 
 code --add /workspaces/gh_utils
 code --add /workspaces/csci-e-101
+code --add /workspaces/OpenDevin
 code --add ~/dotfiles-spacemacs
 
 }
@@ -173,6 +174,7 @@ elif [ "$1" == "sup" ]; then
     add_folders
 else
     echo setup_dotfiles_spacemacs
+    echo NOTE: use setup.sh sup for full install including emacs
     sleep 2
     setup_dotfiles_spacemacs
 fi
