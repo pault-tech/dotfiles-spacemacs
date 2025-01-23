@@ -169,6 +169,7 @@ elif [ "$1" == "sup" ] && [ "$2" == "2" ]; then
     add_folders
 elif [ "$1" == "sup" ]; then
     echo sup setup
+    sleep 2
     install_emacs
     setup_dotfiles_spacemacs
     add_folders
