@@ -2,6 +2,8 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
+;; cp .spacemacs ~/  #deploy this file
+
 (defun dotspacemacs/layers ()
   "Layer configuration:
 This function should only modify configuration layer settings."
@@ -33,6 +35,19 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     (javascript :variables
+                 javascript-backend 'lsp
+                 ;; javascript-lsp-linter nil
+                 )
+     ;; Javascript layer:
+     ;; 2.1. Error checking / linting
+     ;; To activate error checking / linting using flycheck, install on your system one of the available linters such as ESLint, JSHint or StandardJS:
+     ;; $ npm install -g eslint
+     ;; # or
+     ;; $ npm install -g jshint
+     ;; # or
+     ;; $ npm install -g standard
+
      yaml
      (go :variables go-backend 'lsp)
      ;; ----------------------------------------------------------------
