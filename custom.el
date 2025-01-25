@@ -478,13 +478,13 @@ See variable `server-auth-dir' for details."
   (web-search-google (thing-at-point-or-point-mark)))
 
 
-
-(setq vc-follow-symlinks t)
-(find-file "/workspaces/" )
-(find-file "/workspaces/*" 'wildcards)
-(find-file "/workspaces/*/a*build.sh" 'wildcards)
-(find-file "/workspaces/gh_utils/*.sh" 'wildcards)
-(setq vc-follow-symlinks 'ask)
-
+(run-at-time 60 nil (lambda ()
+                      (setq vc-follow-symlinks t)
+                      (find-file-noselect "/workspaces/" t nil)
+                      (find-file-noselect "/workspaces/*" t nil 'wildcards)
+                      (find-file-noselect "/workspaces/*/a*build.sh" t nil 'wildcards)
+                      (find-file-noselect "/workspaces/gh_utils/*.sh" t nil 'wildcards)
+                      (setq vc-follow-symlinks 'ask)
+                      ))
 
 (load-file "/workspaces/gh_utils/custom.el")
