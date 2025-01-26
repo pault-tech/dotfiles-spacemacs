@@ -110,10 +110,10 @@ cp ~/dotfiles-spacemacs/.spacemacs ~/
 gh ext install gh640/gh-repo-list
 gh repo-list --type=starred > /workspaces/_starred.txt
 
-screen -dmS m 
-screen -S m -X stuff 'TERM=xterm-256color emacs --eval "(kill-emacs)" \n'
+screen -dmS e
+screen -S e -X stuff 'TERM=xterm-256color emacs --eval "(kill-emacs)" \n'
 screen -ls
-echo in screen m starting initial run of emacs which will download all packages. this can take awhile...
+echo in screen e starting initial run of emacs which will download all packages. this can take awhile...
 
 }
 
