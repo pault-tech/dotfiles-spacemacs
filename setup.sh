@@ -152,6 +152,15 @@ code --add ~/dotfiles-spacemacs
 
 }
 
+function init_lsp_servers {
+
+# bash mode
+/usr/bin/npm -g --prefix /home/ubuntu/.emacs.d/.cache/lsp/npm/bash-language-server install bash-language-server
+# typescript mode
+/usr/bin/npm -g --prefix /home/ubuntu/.emacs.d/.cache/lsp/npm/typescript-language-server install typescript-language-server
+
+}
+
 
 if [ "$1" == "help" ]; then
     echo 'usage: setup.sh [install_emacs]'
@@ -173,6 +182,7 @@ elif [ "$1" == "sup" ]; then
     install_emacs
     setup_dotfiles_spacemacs
     add_folders
+    init_lsp_servers
 else
     echo setup_dotfiles_spacemacs
     echo NOTE: use setup.sh sup for full install including emacs
