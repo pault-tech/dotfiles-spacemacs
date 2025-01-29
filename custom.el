@@ -460,19 +460,31 @@ See variable `server-auth-dir' for details."
 
 
 
-
+(defun in-devcontainer-p ()
+  (file-exists-p "/.dockerenv"))
 
 (defun web-search-google (&optional word)
   (interactive)
-  ;; (eww-browse-url
-  (browse-url
-   (concat
-    "http://www.google.com/search?q="
-    ;; "https://www.google.com/search?gbv=1&q="
-    ;; "https://duckduckgo.com/?t=ffab&q="
-    ;; (convert-string-to-url word)
-    (url-encode-url word)
-    )))
+  (let ((urlenc
+         (url-encode-url word)))
+    (if (in-devcontainer-p)
+        (browse-url
+         ;; (eww-browse-url
+         (concat
+          "http://www.google.com/search?q="
+          ;; "https://www.google.com/search?gbv=1&q="
+          ;; "https://duckduckgo.com/?t=ffab&q="
+          ;; (convert-string-to-url word)
+          urlenc
+          ))
+      (eww-browse-url
+       (concat
+        "https://duckduckgo.com/?t=ffab&q="
+        urlenc
+        ))
+      )
+    )
+  )
 (defun web-search-google-that ()
   (interactive)
   (web-search-google (thing-at-point-or-point-mark)))

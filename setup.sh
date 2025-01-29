@@ -152,12 +152,23 @@ code --add ~/dotfiles-spacemacs
 
 }
 
+function init_pthon_mode_deps {
+
+    pip install 'python-lsp-server[all]'
+
+    pip install 'jupytext'
+
+}
+
 function init_lsp_servers {
 
 # bash mode
 /usr/bin/npm -g --prefix /home/ubuntu/.emacs.d/.cache/lsp/npm/bash-language-server install bash-language-server
+
 # typescript mode
-/usr/bin/npm -g --prefix /home/ubuntu/.emacs.d/.cache/lsp/npm/typescript-language-server install typescript-language-server
+# /usr/bin/npm -g --prefix /home/ubuntu/.emacs.d/.cache/lsp/npm/typescript-language-server install typescript-language-server
+sudo npm install -g typescript-language-server typescript
+
 
 }
 
@@ -183,6 +194,7 @@ elif [ "$1" == "sup" ]; then
     setup_dotfiles_spacemacs
     add_folders
     init_lsp_servers
+    init_pthon_mode_deps
 else
     echo setup_dotfiles_spacemacs
     echo NOTE: use setup.sh sup for full install including emacs
