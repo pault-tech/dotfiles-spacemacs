@@ -35,7 +35,10 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     (typescript)
+     (typescript :variables typescript-backend 'lsp
+                 typescript-fmt-on-save t
+                 typescript-fmt-tool 'prettier)
+     react
      (javascript :variables
                  javascript-backend 'lsp
                  ;; javascript-lsp-linter nil
@@ -49,8 +52,14 @@ This function should only modify configuration layer settings."
      ;; # or
      ;; $ npm install -g standard
 
-     yaml
-     (go :variables go-backend 'lsp)
+     (yaml :variables yaml-enable-lsp t)
+     (sql :variables
+          sql-backend 'lsp
+          sql-lsp-sqls-workspace-config-path 'workspace)
+     (go :variables go-backend 'lsp
+         go-format-before-save t
+         go-use-golangci-lint t
+         go-backend 'lsp)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -96,10 +105,13 @@ This function should only modify configuration layer settings."
 
      emacs-lisp
      git
+     docker
+     kubernetes
+     ;; (helm :variables helm-use-fuzzy 'always)
      helm
      ;; lsp
      ;; markdown
-     multiple-cursors
+     ;; multiple-cursors
      ;; org
      (shell :variables
             shell-default-term-shell "/bin/bash"
@@ -109,7 +121,17 @@ This function should only modify configuration layer settings."
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
-     treemacs)
+     treemacs
+
+
+     ;; ruby
+     ;; lsp
+     ;; markdown
+     ;; org
+     ;; spell-checking
+     ;; syntax-checking
+     ;; version-control
+     )
 
 
    ;; List of additional packages that will be installed without being wrapped
