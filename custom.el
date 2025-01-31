@@ -490,10 +490,10 @@ See variable `server-auth-dir' for details."
   (web-search-google (thing-at-point-or-point-mark)))
 
 
+(find-file-noselect "/workspaces/" t nil)
+(find-file-noselect "/workspaces/*" t nil 'wildcards)
 (run-at-time 60 nil (lambda ()
                       (setq vc-follow-symlinks t)
-                      (find-file-noselect "/workspaces/" t nil)
-                      (find-file-noselect "/workspaces/*" t nil 'wildcards)
                       (find-file-noselect "/workspaces/*/a*build.sh" t nil 'wildcards)
                       (find-file-noselect "/workspaces/gh_utils/*.sh" t nil 'wildcards)
                       (setq vc-follow-symlinks 'ask)
