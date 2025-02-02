@@ -503,7 +503,8 @@ See variable `server-auth-dir' for details."
                       (setq vc-follow-symlinks t)
                       (find-file-noselect "/workspaces/*/a*build.sh" t nil 'wildcards)
                       (find-file-noselect "/workspaces/gh_utils/*.sh" t nil 'wildcards)
-                      (find-file-noselect "/workspaces/gh_utils/*.el" t nil 'wildcards) #elisp
+                      ;;elisp
+                      (find-file-noselect "/workspaces/gh_utils/*.el" t nil 'wildcards)
                       (setq vc-follow-symlinks 'ask)
                       ))
 
