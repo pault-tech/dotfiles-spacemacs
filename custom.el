@@ -378,13 +378,17 @@ See variable `server-auth-dir' for details."
          (execstr (if markactive
                       (concat
                        (buffer-substring-no-properties (point) (mark))"\n")
+                    ;; (if
+                    ;; jupyter notebook NOTE: this was abandoned in favor of setting paragraph-start regex for jupytext code cell
+                    ;; get-current-buffer-text-between-double-percent
                     (concat
                      exec-sql-exec-str-prefix
                      (buffer-substring-no-properties start-para end-para)
                      exec-sql-exec-str-suffix
                      )
+                    ;; )
                     )))
-
+    ;; (debug)
     ;; (if (exec-buffer-redirect-to (buffer-file-name))
     ;;     (setq buff (exec-buffer-redirect-to (buffer-file-name))))
     (if (or
