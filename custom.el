@@ -387,7 +387,6 @@ See variable `server-auth-dir' for details."
 
     ;; (if (exec-buffer-redirect-to (buffer-file-name))
     ;;     (setq buff (exec-buffer-redirect-to (buffer-file-name))))
-
     (if (or
          (and
           dont-force-always-to-prompt-only-prompt-w-update-delete;;nil to temporarily break this and always prompt
@@ -500,7 +499,14 @@ See variable `server-auth-dir' for details."
                       (setq vc-follow-symlinks t)
                       (find-file-noselect "/workspaces/*/a*build.sh" t nil 'wildcards)
                       (find-file-noselect "/workspaces/gh_utils/*.sh" t nil 'wildcards)
+                      (find-file-noselect "/workspaces/gh_utils/*.el" t nil 'wildcards) #elisp
                       (setq vc-follow-symlinks 'ask)
                       ))
 
 (load-file "/workspaces/gh_utils/custom.el")
+
+
+(defun mytmp ()
+  (if mark-active
+      (buffer-substring (mark) (point))
+    (thing-at-point 'symbol)))
