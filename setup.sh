@@ -48,7 +48,7 @@ IFS=  && read -r -d '' TXT << EOM
 source ~/.profile;
 export LANG=en_US.UTF-8
 ssh -oBatchMode=yes git@github.com
-if [ $? -ne 0 ]; then
+if [ \$? -ne 0 ]; then
 printf "ssh login to github failed. try adding ssh keys to session\n\n"
 sleep 30
 fi
