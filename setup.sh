@@ -47,6 +47,11 @@ echo chmod 700 /tmp/emacs1000 > ~/emacs.sh
 IFS=  && read -r -d '' TXT << EOM
 source ~/.profile;
 export LANG=en_US.UTF-8
+ssh -oBatchMode=yes git@github.com
+if [ $? -ne 0 ]; then
+printf "ssh login to github failed. try adding ssh keys to session\n\n"
+sleep 30
+fi
 while true; do
   type pylsp || ( echo 'warning: pylsp not found for python mode, see .spacemacs for installation'  && sleep 5)
   TERM=xterm-256color emacs -nw -l ~/custom.el;
