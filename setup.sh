@@ -50,7 +50,7 @@ export LANG=en_US.UTF-8
 ssh -oBatchMode=yes git@github.com
 if [ \$? -ne 0 ]; then
 printf "ssh login to github failed. try adding ssh keys to session\n\n"
-sleep 30
+sleep 10
 fi
 while true; do
   type pylsp || ( echo 'warning: pylsp not found for python mode, see .spacemacs for installation'  && sleep 5)
