@@ -662,9 +662,14 @@ This function is called at the very end of Spacemacs initialization."
    ;; If you edit it by hand, you could mess it up, so be careful.
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
+
+   ;; '(lsp-pylsp-plugins-pycodestyle-max-line-length 9999) ;; TODO
+   '(lsp-pylsp-plugins-flake8-max-line-length 9999)
+
    '(custom-safe-themes
      '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default))
    '(evil-want-Y-yank-to-eol nil)
+   ;; TODO
    '(lsp-eslint-server-command
      `("node" "/home/paul/.emacs.d/.cache/lsp/eslint/unzipped/extension/server/out/eslintServer.js" "--stdio"))
    '(package-selected-packages
