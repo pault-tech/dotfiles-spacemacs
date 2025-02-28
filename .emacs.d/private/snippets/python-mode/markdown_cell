@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : markdown_cell
+#key : markdown_cell
+#contributor : Ubuntu
+# --
+# %% [markdown]
