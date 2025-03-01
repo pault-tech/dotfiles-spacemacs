@@ -1,0 +1,37 @@
+# -*- mode: snippet -*-
+#name : ipython_jupyter_spacemacs_hints
+#key : ipython_jupyter_spacemacs_hints
+#contributor : Ubuntu
+# --
+# %% [markdown]
+#
+# NOTE: utility code for working with ipython/emacs IDE setup
+# ```
+#
+# ssh -i ~/e104*pem ec2-user@gpu
+#
+# # activate anaconda
+# # bash # need to exec a new shell?
+# source ~/.bashrc
+# conda activate pytorch_env
+# echo $CONDA_PREFIX
+#
+# pip install ipython
+#
+#
+# ipython
+#
+#
+# %autoindent
+#
+# on aws deep learning AMI: * To activate pre-built pytorch environment, run: 'source activate pytorch'
+#
+# source activate pytorch
+#
+#
+# note ensure the below is in a comment to avoid recrusive calls...
+# avoid recalling self
+# remove TODO___ below and submit without saving...
+# %run TODO___ cifar10_tutorial.ipynb
+# ```
+#
