@@ -72,6 +72,8 @@ ls -l /tmp/emacs*
 ls ~/.emacs.d && printf '\n\n~/.emacs.d exists please mv that directory and retry...\n' && exit
 git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 printf "\n\n(setq vterm-always-compile-module t)" >> ~/.emacs.d/early-init.el
+cp ~/dotfiles-spacemacs/.emacs.d/private/snippets/python-mode/* \
+~/.emacs.d/private/snippets/python-mode/*
 #gnu screen
 sudo apt install -y screen
 
