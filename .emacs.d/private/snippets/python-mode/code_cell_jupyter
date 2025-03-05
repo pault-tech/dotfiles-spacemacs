@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : code_cell_jupyter
+#key : code_cell_jupyter
+#contributor : Ubuntu
+# --
+# %%
