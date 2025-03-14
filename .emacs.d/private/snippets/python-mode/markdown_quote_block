@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Code block
+# key: markdown_quote_block
+# --
+\`\`\`$1
+$0
+\`\`\`
