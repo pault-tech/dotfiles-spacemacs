@@ -23,15 +23,14 @@
 #
 # ipython --no-autoindent
 #
-#
-# %autoindent
+# %autoindent  # Automatic indentation is: OFF
 #
 # on aws deep learning AMI: * To activate pre-built pytorch environment, run: 'source activate pytorch'
 #
 # source activate pytorch
 #
-#
-# note ensure the below is in a comment to avoid recrusive calls...
+# batch run entire notebook:
+# note: ensure the below is in a comment to avoid recrusive calls...
 # avoid recalling self
 # remove TODO___ below and submit without saving...
 # %run TODO___ cifar10_tutorial.ipynb
