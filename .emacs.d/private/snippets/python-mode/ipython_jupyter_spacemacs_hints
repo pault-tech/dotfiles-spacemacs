@@ -8,7 +8,7 @@
 #
 # NOTE: utility code for working with ipython/emacs/vim IDE setup
 # please ignore
-# ```
+# \`\`\`
 #
 # ssh -i ~/e104*pem ec2-user@gpu
 #
@@ -21,7 +21,7 @@
 # pip install ipython
 #
 #
-# ipython
+# ipython --no-autoindent
 #
 #
 # %autoindent
@@ -35,5 +35,5 @@
 # avoid recalling self
 # remove TODO___ below and submit without saving...
 # %run TODO___ cifar10_tutorial.ipynb
-# ```
+# \`\`\`
 #
