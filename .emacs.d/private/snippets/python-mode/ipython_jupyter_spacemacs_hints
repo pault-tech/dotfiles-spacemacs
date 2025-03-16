@@ -4,6 +4,11 @@
 #contributor : Ubuntu
 # --
 
+# %%
+# reset an interactive IPython session, the reset magic command
+#
+# %reset -f
+
 # %% [markdown]
 #
 # NOTE: utility code for working with ipython/emacs/vim IDE setup
