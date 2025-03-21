@@ -19,9 +19,7 @@
 #
 # # activate anaconda
 # # bash # need to exec a new shell?
-# source ~/.bashrc
-# conda activate pytorch_env
-# echo $CONDA_PREFIX
+# source ~/.bashrc;  conda activate pytorch_env ; echo $CONDA_PREFIX; type ipython
 #
 # pip install ipython
 #
