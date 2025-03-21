@@ -27,6 +27,10 @@
 #
 # ipython --no-autoindent
 #
+# or w code-cells:
+# (spacemacs/python-start-or-switch-repl)
+# (code-cells-eval)
+#
 # %autoindent  # Automatic indentation is: OFF
 #
 # on aws deep learning AMI: * To activate pre-built pytorch environment, run: 'source activate pytorch'
