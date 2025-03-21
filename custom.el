@@ -418,7 +418,8 @@ See variable `server-auth-dir' for details."
 
     ;;(write-string-to-file "/tmp/execstr.sh" execstr)
     (other-window 1)
-    (pulse-momentary-highlight-region start-para end-para)
+    (if markactive (pulse-momentary-highlight-region (point) (mark))
+      (pulse-momentary-highlight-region start-para end-para))
     )
   )
 
