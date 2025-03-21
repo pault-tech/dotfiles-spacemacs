@@ -20,6 +20,7 @@
 # # activate anaconda
 # # bash # need to exec a new shell?
 # source ~/.bashrc;  conda activate pytorch_env ; echo $CONDA_PREFIX; type ipython
+#
 # python -c 'import torch' #test torch import from conda environment
 #
 # pip install ipython
