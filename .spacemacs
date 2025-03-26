@@ -99,6 +99,8 @@ This function should only modify configuration layer settings."
 
      ;; ipython-notebook ;; requires a running jupyter notebook server
 
+     conda ;;python envs
+
      ;; (terraform :variables terraform-auto-format-on-save t)
      (shell-scripts :variablesshell-scripts-format-on-save t)
 
