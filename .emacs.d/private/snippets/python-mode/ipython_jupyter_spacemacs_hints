@@ -5,7 +5,7 @@
 # --
 
 # %%
-# reset an interactive IPython session, the reset magic command, eg re-executing cells from top
+# reset an interactive IPython session, the reset magic command
 #
 # %reset -f
 
@@ -16,25 +16,14 @@
 # \`\`\`
 """
 
+ssh -i ~/e104*pem ec2-user@gpu
+
 # activate anaconda
 # bash # need to exec a new shell?
 source ~/.bashrc;  conda activate pytorch_env ; echo $CONDA_PREFIX; type ipython
 python -c 'import torch' #test torch import from conda environment
 ipython --no-autoindent
 
-
-"""
-# \`\`\`
-#
-
-# %% [markdown]
-#
-# NOTE: utility code for working with ipython/emacs/vim IDE setup
-# please ignore
-# \`\`\`
-"""
-
-ssh -i ~/e104*pem ec2-user@gpu
 
 pip install ipython
 

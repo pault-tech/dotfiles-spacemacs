@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#name : debugger_breakpoint
+#key : debugger_breakpoint
+#contributor : Ubuntu
+# --
+# %debug
+breakpoint()
+
