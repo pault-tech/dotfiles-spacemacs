@@ -33,6 +33,8 @@ ipython --no-autoindent
 # (spacemacs/python-start-or-switch-repl)
 # (code-cells-eval)
 
+# (auto-revert-mode 'toggle) eg when working with code-server/vscode that is making updates
+
 %autoindent  # Automatic indentation is: OFF
 
 # on aws deep learning AMI: * To activate pre-built pytorch environment, run: 'source activate pytorch'
