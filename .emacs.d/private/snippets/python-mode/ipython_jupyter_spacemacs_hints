@@ -13,53 +13,54 @@
 #
 # NOTE: utility code for working with ipython/emacs/vim IDE setup
 # please ignore
-# \`\`\`
-"""
 
-# activate anaconda
-# bash # need to exec a new shell?
+# %%
+# activate conda env, start ipython
+tmp_utility_code= """
+
+bash # need to exec a new shell?
 source ~/.bashrc;  conda activate pytorch_env ; echo $CONDA_PREFIX; type ipython
 python -c 'import torch;print("\nhi")' #test torch import from conda environment
 sleep 3
-#
+
 ipython --no-autoindent
 
-
 """
-# \`\`\`
 #
+
+# %%
+import torch
 
 # %% [markdown]
 #
 # NOTE: utility code for working with ipython/emacs/vim IDE setup
 # please ignore
 # \`\`\`
-"""
-
-ssh -i ~/e104*pem ec2-user@gpu
-
-pip install ipython
-
-ipython --no-autoindent
-
+#
+# ssh -i ~/e104*pem ec2-user@gpu
+#
+# pip install ipython
+#
+# ipython --no-autoindent
+#
 # or w code-cells:
 # (spacemacs/python-start-or-switch-repl)
 # (code-cells-eval)
-
+#
 # (auto-revert-mode 'toggle) eg when working with code-server/vscode that is making updates
-
-%autoindent  # Automatic indentation is: OFF
-
+#
+# %autoindent  # Automatic indentation is: OFF
+#
 # on aws deep learning AMI: * To activate pre-built pytorch environment, run: 'source activate pytorch'
-
-source activate pytorch
-
+#
+# source activate pytorch
+#
 # batch run entire notebook:
 # note: ensure the below is in a comment to avoid recrusive calls...
 # avoid recalling self
 # remove TODO___ below and submit without saving...
-%run TODO___ cifar10_tutorial.ipynb
-
-"""
+# %run TODO___ cifar10_tutorial.ipynb
+#
 # \`\`\`
+# NOTE: jupytext will automatically comment above markdown out
 #
