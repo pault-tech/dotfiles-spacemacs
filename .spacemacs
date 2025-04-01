@@ -666,6 +666,8 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
 
+   '(conda-env-autoactivate-mode t)
+
    ;; '(lsp-pylsp-plugins-pycodestyle-max-line-length 9999) ;; TODO
    '(lsp-pylsp-plugins-flake8-max-line-length 9999)
 
