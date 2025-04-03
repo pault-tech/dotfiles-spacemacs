@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+#name : matplot_ascii
+#key : matplot_ascii
+#contributor : Ubuntu
+# --
+# %%
+# Working from bash terminal use asciii plots...
+# Install mpl_ascii using pip
+
+! pip install mpl_ascii
+# To use mpl_ascii, add to your python program
+
+import matplotlib as mpl
+
+mpl.use("module://mpl_ascii")
