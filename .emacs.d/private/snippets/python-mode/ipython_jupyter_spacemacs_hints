@@ -25,8 +25,14 @@ sleep 3
 
 ipython --no-autoindent
 
+
 """
 #
+
+# %%
+import os
+
+print (os.environ['CONDA_DEFAULT_ENV'])
 
 # %%
 import torch
