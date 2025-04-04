@@ -8,8 +8,19 @@
 # Install mpl_ascii using pip
 
 ! pip install mpl_ascii
+
+# %%
 # To use mpl_ascii, add to your python program
 
+import matplotlib.pyplot as plt
 import matplotlib as mpl
+import mpl_ascii
+
+mpl_ascii.ENABLE_COLORS = False
+mpl_ascii.AXES_WIDTH=100
+mpl_ascii.AXES_HEIGHT=40
 
 mpl.use("module://mpl_ascii")
+
+import matplotlib.pyplot as plt
+
