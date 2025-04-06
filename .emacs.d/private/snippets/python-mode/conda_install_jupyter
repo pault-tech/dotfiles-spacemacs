@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : conda_install_jupyter
+#key : conda_install_jupyter
+#contributor : Ubuntu
+# --
+# %%
+# # NOTE: use ipython magic for conda
+# %conda install -c conda-forge pydicom
+# %conda install opencv-python
