@@ -155,7 +155,7 @@ See variable `server-auth-dir' for details."
               (progn
                 (setq mysubmit-build-cmd (expand-file-name mysubmit-build-cmd (locate-dominating-file "." mysubmit-build-cmd)))
                 (save-buffer)
-                (mysubmit-switch-to-unix-bash-sh mysubmit-build-cmd)
+                (mysubmit-switch-to-unix-bash-sh mysubmit-build-cmd buffer-file-truename)
                 (message mysubmit-build-cmd)
                 (switch-to-buffer-other-window
                  (switch-to-unix-bash-command-comint-buffer-name)                   t)
@@ -183,9 +183,10 @@ See variable `server-auth-dir' for details."
     )
   )
 
-(defun mysubmit-switch-to-unix-bash-sh (filename)
+(defun mysubmit-switch-to-unix-bash-sh (filename buffr-file-name)
   (switch-to-unix-bash-command
-   (concat "chmod +x \""filename "\";" "\""filename "\"")
+   ;; (concat "chmod +x \""filename "\";" "\""filename "\"")
+   (concat "chmod +x \""filename "\";" "\""filename "\"" " \""buffr-file-name"\"")
    (concat (file-name-nondirectory
             filename)
            "--(sh "filename")"
