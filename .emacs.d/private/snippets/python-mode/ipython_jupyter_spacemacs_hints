@@ -19,7 +19,7 @@
 tmp_utility_code= """
 
 bash # need to exec a new shell?
-source ~/.bashrc;  conda activate pytorch_env ; echo $CONDA_PREFIX; type ipython
+source ~/.bashrc;  conda activate pytorch3 ; echo $CONDA_PREFIX; type ipython
 python -c 'import torch;print("\nhi")' #test torch import from conda environment
 sleep 3
 
