@@ -32,7 +32,9 @@ ipython --no-autoindent
 # %%
 import os
 
-print (os.environ['CONDA_DEFAULT_ENV'])
+
+if 'CONDA_DEFAULT_ENV' in os.environ:
+    print ("conda env is "+os.environ['CONDA_DEFAULT_ENV'])
 
 # %%
 import torch
