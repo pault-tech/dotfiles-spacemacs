@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : skip_cell_magic
+#key : skip_cell_magic
+#contributor : Ubuntu
+# --
+%%script echo skipping
