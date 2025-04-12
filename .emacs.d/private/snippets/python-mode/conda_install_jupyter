@@ -5,5 +5,7 @@
 # --
 # %%
 # # NOTE: use ipython magic for conda
-# %conda install -c conda-forge pydicom
-# %conda install opencv-python
+is_local = 'KAGGLE_KERNEL_RUN_TYPE' not in os.environ
+if is_local:
+  # %conda install -y -c conda-forge openai 
+  pass
