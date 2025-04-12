@@ -1,0 +1,38 @@
+# -*- mode: snippet -*-
+#name : conda_install_jupyter_full_explain
+#key : conda_install_jupyter_full_explain
+#contributor : Ubuntu
+# --
+# %%
+# # NOTE: use ipython magic for conda
+import os
+
+is_local = 'KAGGLE_KERNEL_RUN_TYPE' not in os.environ
+if is_local:
+  # python3 is the kernel name on Kaggle so use that for local kernel name as well
+  # %conda install -y --name python3 -c conda-forge openai 
+  pass
+
+# %%
+# https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/
+# The root of the issue is this: the shell environment is determined when the Jupyter notebook is launched, while the Python executable is determined by the kernel, and the two do not necessarily match. In other words, there is no guarantee that the python, pip, and conda in your $PATH will be compatible with the python executable used by the notebook.
+
+# Recall that the python in your path can be determined using
+
+!type python
+# python is /Users/jakevdp/anaconda/envs/python3.6/bin/python
+# The Python executable being used in the notebook can be determined using
+import sys
+
+sys.executable
+# '/Users/jakevdp/anaconda/bin/python'
+# In my current notebook environment, the two differ. This is why a simple !pip install or !conda install does not work: the commands install packages in the site-packages of the wrong Python installation.
+
+# As noted above, we can get around this by explicitly identifying where we want packages to be installed.
+
+# For conda, you can set the prefix manually in the shell command:
+
+#     $ conda install --yes --prefix /Users/jakevdp/anaconda numpy
+#     or, to automatically use the correct prefix (using syntax available in the notebook)
+
+#     !conda install --yes --prefix {sys.prefix} numpy
