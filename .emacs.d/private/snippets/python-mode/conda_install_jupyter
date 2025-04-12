@@ -9,5 +9,6 @@ import os
 
 is_local = 'KAGGLE_KERNEL_RUN_TYPE' not in os.environ
 if is_local:
-  # %conda install -y -c conda-forge openai 
+  # python3 is the kernel name on Kaggle so use that for local kernel name as well
+  # %conda install -y --name python3 -c conda-forge openai 
   pass
