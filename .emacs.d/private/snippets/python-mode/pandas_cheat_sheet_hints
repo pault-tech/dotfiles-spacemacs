@@ -1,0 +1,60 @@
+# -*- mode: snippet -*-
+#name : pandas_cheat_sheet_hints
+#key : pandas_cheat_sheet_hints
+#contributor : Ubuntu
+# --
+
+
+
+
+# Importing Data
+
+import pandas as pd
+df = pd.read_csv('file.csv') # From CSV
+df = pd.read_excel('file.xlsx') # From Excel
+df = pd.read_json('file.json') # From JSON
+df = pd.read_sql('SELECT * FROM table', connection) # From SQL
+
+# Exploring Data
+
+df.head() # First 5 rows
+df.tail(3) # Last 3 rows
+df.info() # DataFrame information
+df.describe() # Summary statistics
+df.shape # Number of rows and columns
+df.columns # Column names
+df.index # Index range
+df.dtypes # Data types per column
+df['column_name'].unique() # Unique values in a column
+df['column_name'].nunique() # Count of unique values
+df.isnull().sum() # Count of null values per column
+
+# Selecting and Filtering
+
+df['column_name'] # Select single column
+df[['col1', 'col2']] # Select multiple columns
+df[df['column_name'] > 50] # Filter rows based on condition
+df[df['column_name'].isin(['value1', 'value2'])] # Filter based on multiple values
+df[df['column_name'].str.contains('text')] # Filter based on text
+df.loc[row_indexer, column_indexer] # Select rows and columns by label
+df.iloc[row_indexer, column_indexer] # Select rows and columns by index
+
+# Modifying Data
+
+df['new_column'] = df['col1'] + df['col2'] # Add new column
+df.drop('column_name', axis=1, inplace=True) # Delete column
+df.rename(columns={'old_name': 'new_name'}, inplace=True) # Rename column
+df.sort_values('column_name', ascending=False, inplace=True) # Sort by column
+df.dropna(inplace=True) # Remove rows with null values
+df.fillna(0, inplace=True) # Replace null values
+
+# Grouping and Aggregating
+
+df.groupby('column_name').mean() # Group by and calculate mean
+df.groupby('column_name').agg(['min', 'max', 'count']) # Group by and aggregate
+df.pivot_table(values='col_to_aggregate', index='col_for_index', columns='col_for_columns') # Create pivot table
+
+# Combining Data
+
+pd.concat([df1, df2]) # Concatenate DataFrames
+pd.merge(df1, df2, on='common_column', how='inner') # Merge DataFrames
