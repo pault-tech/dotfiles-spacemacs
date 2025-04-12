@@ -5,6 +5,8 @@
 # --
 # %%
 # # NOTE: use ipython magic for conda
+import os
+
 is_local = 'KAGGLE_KERNEL_RUN_TYPE' not in os.environ
 if is_local:
   # %conda install -y -c conda-forge openai 
