@@ -88,6 +88,7 @@ cd /workspaces
 # git clone https://github.com/pault-tech/dotfiles-spacemacs.git
 # git clone https://github.com/pault-tech/kafka-k8s.git
 
+#TODO: should instead use a_git.sh vs below?
 ORG="" #default self
 ORG="pault-tech" #default self
 # set repos (gh repo list $ORG --limit 9999 --json name)
