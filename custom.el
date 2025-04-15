@@ -424,6 +424,10 @@ See variable `server-auth-dir' for details."
     )
   )
 
+(defun exec-sql-no-prompt ()
+  (exec-sql 'no-prompt)
+  )
+
 (defun exec-sql-send-buffer-string (buff execstr)
   (progn
     ;; (message (concat "submitting:  (replace-all execstr "%" "_PERCENT_")))
