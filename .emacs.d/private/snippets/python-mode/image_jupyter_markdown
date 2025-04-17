@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : image_jupyter_markdown
+#key : image_jupyter_markdown
+#contributor : Ubuntu
+# --
+![alt text](imagename.png "Title")
