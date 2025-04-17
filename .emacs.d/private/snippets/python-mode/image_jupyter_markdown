@@ -37,7 +37,6 @@ def embed_notebook_image(filename, description):
 filename = "horsepower_displacement.png"
 description = "scatter plot relating the Displacement and the Horsepower of cars"
 
-file_path = "4_appendix.ipynb"
 file_path = "_appendix.ipynb"
 string_to_append = embed_notebook_image(filename, description)
 
