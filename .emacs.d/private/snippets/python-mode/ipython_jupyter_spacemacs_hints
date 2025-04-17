@@ -5,7 +5,7 @@
 # --
 
 # %%
-# NOTE: utility code for working with ipython/emacs/vim IDE setup
+# NOTE: utility code for working with ipython/emacs/vim IDE setup. also see _full
 # please ignore
 tmp_utility_code= """
 
