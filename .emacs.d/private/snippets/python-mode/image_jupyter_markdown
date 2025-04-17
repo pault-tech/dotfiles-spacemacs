@@ -3,4 +3,41 @@
 #key : image_jupyter_markdown
 #contributor : Ubuntu
 # --
+
 ![alt text](imagename.png "Title")
+
+
+
+# see:   https://gist.github.com/situmorang-com/6eec75ffe0e76343532e1c2fa5a7d1f4
+
+# While a lot of the above answers give ways to embed an image using a file or with Python code, there is a way to embed an image in the jupyter notebook itself using only markdown and base64!
+# To view an image in the browser, you can visit the link data:image/png;base64,**image data here** for a base64-encoded PNG image, or data:image/jpg;base64,**image data here** for a base64-encoded JPG image. An example link can be found at the end of this answer.
+# To embed this into a markdown page, simply use a similar construct as the file answers, but with a base64 link instead: ![**description**](data:image/**type**;base64,**base64 data**). Now your image is 100% embedded into your Jupyter Notebook file!
+# Example link: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABHNCSVQICAgIfAhkiAAAAD9JREFUGJW1jzEOADAIAqHx/1+mE4ltNXEpI3eJQknCIGsiHSLJB+aO/06PxOo/x2wBgKR2jCeEy0rOO6MDdzYQJRcVkl1NggAAAABJRU5ErkJggg==
+# Example markdown: ![smile](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABHNCSVQICAgIfAhkiAAAAD9JREFUGJW1jzEOADAIAqHx/1+mE4ltNXEpI3eJQknCIGsiHSLJB+aO/06PxOo/x2wBgKR2jCeEy0rOO6MDdzYQJRcVkl1NggAAAABJRU5ErkJggg==)
+
+# %%
+import base64
+
+
+def embed_notebook_image(filename, description):
+    with open(filename, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+        mdimg = f"""#% [markdown]
+#
+#    ![{description}](data:image/png;base64,{encoded_string})
+
+
+"""
+        return mdimg
+
+
+filename = "horsepower_displacement.png"
+description = "scatter plot relating the Displacement and the Horsepower of cars"
+
+file_path = "4_appendix.ipynb"
+file_path = "_appendix.ipynb"
+string_to_append = embed_notebook_image(filename, description)
+
+with open(file_path, "a") as file:
+    file.write(string_to_append)
