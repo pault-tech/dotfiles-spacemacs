@@ -17,6 +17,8 @@
 # Example markdown: ![smile](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABHNCSVQICAgIfAhkiAAAAD9JREFUGJW1jzEOADAIAqHx/1+mE4ltNXEpI3eJQknCIGsiHSLJB+aO/06PxOo/x2wBgKR2jCeEy0rOO6MDdzYQJRcVkl1NggAAAABJRU5ErkJggg==)
 
 # %%
+
+# NOTE: utility code to embed external image in a jupyter notebook, please ignore
 import base64
 
 
