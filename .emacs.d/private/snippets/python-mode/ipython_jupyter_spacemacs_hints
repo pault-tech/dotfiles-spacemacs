@@ -9,7 +9,7 @@
 # please ignore
 tmp_utility_code= """
 
-bash; source ~/.bashrc; source ../.env; conda activate python3;
+source ~/.bashrc; source ../.env; conda activate python3; echo $CONDA_PREFIX; type ipython
 ipython --no-autoindent
 
 
