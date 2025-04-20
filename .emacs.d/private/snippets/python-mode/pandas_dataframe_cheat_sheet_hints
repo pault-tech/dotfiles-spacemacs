@@ -39,6 +39,9 @@ df[df['column_name'].str.contains('text')] # Filter based on text
 df.loc[row_indexer, column_indexer] # Select rows and columns by label
 df.iloc[row_indexer, column_indexer] # Select rows and columns by index
 
+for index, row in train_df.iterrows():
+    train_df.at[index, 'aa'] = True
+
 # Modifying Data
 
 df['new_column'] = df['col1'] + df['col2'] # Add new column
