@@ -78,7 +78,8 @@ This function should only modify configuration layer settings."
              python-formatter 'lsp
              python-format-on-save t
              python-save-before-test t
-             python-sort-imports-on-save t)
+             ;; python-sort-imports-on-save t
+             )
 
      ;;3.2.1. python-lsp-server
      ;; You need to install python language server:
