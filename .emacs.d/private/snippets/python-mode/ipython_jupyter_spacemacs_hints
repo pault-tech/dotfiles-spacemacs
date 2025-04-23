@@ -12,7 +12,7 @@
 tmp_utility_code= """
 
 source ~/.bashrc; source ../.env; conda activate python3; echo $CONDA_PREFIX; type ipython
-ipython --no-autoindent
+ls ~/anaconda3/envs/python3 && ipython --no-autoindent
 
 
 """
