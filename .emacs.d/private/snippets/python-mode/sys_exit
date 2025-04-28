@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : sys_exit
+#key : sys_exit
+#contributor : Ubuntu
+# --
+
+# %%
+import sys; sys.exit()
+
