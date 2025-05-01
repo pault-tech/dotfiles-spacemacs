@@ -108,8 +108,8 @@ do
 	  git clone https://github.com/$ORG/$u || echo "failed to clone $u"
 done
 
-git clone https://github.com/localstack/localstack-pro-samples.git
-git clone https://github.com/mrwormhole/hotdog-localstack-PoC.git
+# git clone https://github.com/localstack/localstack-pro-samples.git
+# git clone https://github.com/mrwormhole/hotdog-localstack-PoC.git
 # git clone https://github.com/lombardo-chcg/kafka-local-stack.git
 
 #NOTE: ssh protol not supported...
