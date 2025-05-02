@@ -189,10 +189,10 @@ See variable `server-auth-dir' for details."
 
 (defun mysubmit-switch-to-unix-bash-sh (filename buffr-file-name &optional cmd-args)
   (switch-to-unix-bash-command
-   ;; (concat "chmod +x \""filename "\";" "\""filename "\"")
-   (concat "chmod +x \""filename "\";" "\""filename "\""
-           " \""buffr-file-name"\""
-           (if cmd-args " \""cmd-args"\"" "")
+   ;; (concat "chmod +x \""filename "\";" "\""filename "\"") ;;v1
+   ;; (concat "chmod +x \""filename "\";" "\""filename "\"" " \""buffr-file-name"\"") ;;v2
+   (concat "chmod +x \""filename "\";" "\""filename "\"" " \""buffr-file-name"\""
+           (if cmd-args (concat " \""cmd-args"\"") "")
            )
    (concat (file-name-nondirectory
             filename)
