@@ -183,10 +183,13 @@ See variable `server-auth-dir' for details."
     )
   )
 
-(defun mysubmit-switch-to-unix-bash-sh (filename buffr-file-name)
+(defun mysubmit-switch-to-unix-bash-sh (filename buffr-file-name &optional cmd-args)
   (switch-to-unix-bash-command
    ;; (concat "chmod +x \""filename "\";" "\""filename "\"")
-   (concat "chmod +x \""filename "\";" "\""filename "\"" " \""buffr-file-name"\"")
+   (concat "chmod +x \""filename "\";" "\""filename "\""
+           " \""buffr-file-name"\""
+           (if cmd-args " \""cmd-args"\"" "")
+           )
    (concat (file-name-nondirectory
             filename)
            "--(sh "filename")"
