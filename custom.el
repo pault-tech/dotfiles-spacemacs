@@ -157,8 +157,12 @@ See variable `server-auth-dir' for details."
                 (save-buffer)
                 (mysubmit-switch-to-unix-bash-sh mysubmit-build-cmd buffer-file-truename)
                 (message mysubmit-build-cmd)
+                ;; TODO: there seems to be a bug here where there is a switch to *no-buffer-file-name. see 1 line fix below
+                ;; begin fix
+                (select-window (get-buffer-window orig-window))
+                ;; end fix
                 (switch-to-buffer-other-window
-                 (switch-to-unix-bash-command-comint-buffer-name)                   t)
+                 (switch-to-unix-bash-command-comint-buffer-name) 'no-record)
                 (end-of-buffer)
                 (evil-force-normal-state)
                 )
