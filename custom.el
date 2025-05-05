@@ -487,33 +487,47 @@ See variable `server-auth-dir' for details."
 
 
 (defun in-devcontainer-p ()
-  (file-exists-p "/.dockerenv"))
+  (or
+   (file-exists-p "/.dockerenv")
+   (file-exists-p "~/eww")
+   ;; t
+   )
+  )
 
-(defun web-search-google (&optional word)
+(defun web-search-google (&optional search-type word)
   (interactive)
   (let ((urlenc
-         (url-encode-url word)))
+         (url-encode-url word))
+        (engine (if (eq search-type 'duckduckgo)
+                    "https://duckduckgo.com/?t=ffab&q="
+                  "http://www.google.com/search?q="
+                  ;; "https://www.google.com/search?gbv=1&q="
+                  ))
+        )
     (if (in-devcontainer-p)
-        (browse-url
-         ;; (eww-browse-url
+        (eww-browse-url
          (concat
-          "http://www.google.com/search?q="
-          ;; "https://www.google.com/search?gbv=1&q="
-          ;; "https://duckduckgo.com/?t=ffab&q="
-          ;; (convert-string-to-url word)
+          engine
           urlenc
           ))
-      (eww-browse-url
+      (browse-url
+       ;; (eww-browse-url
        (concat
-        "https://duckduckgo.com/?t=ffab&q="
+        engine
+        ;; (convert-string-to-url word)
         urlenc
         ))
       )
     )
   )
+
 (defun web-search-google-that ()
   (interactive)
-  (web-search-google (thing-at-point-or-point-mark)))
+  (web-search-google 'google (thing-at-point-or-point-mark)))
+
+(defun web-search-duckduckgo-that ()
+  (interactive)
+  (web-search-google 'duckduckgo (thing-at-point-or-point-mark)))
 
 
 (run-at-time 30 nil (lambda ()
