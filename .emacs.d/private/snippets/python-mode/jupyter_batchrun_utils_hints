@@ -4,17 +4,5 @@
 #contributor : Ubuntu
 # --
 # batch run
-kernelname=`$*.ipynb`
-jupyter nbconvert --to notebook --execute --embed-images $kernelname.ipynb \
-        --output=$kernelname.batchrun.ipynb
 
-# convert to html
-jupyter nbconvert --to html *.batchrun.ipynb
-echo done
-
-# transfer to laptop
-fname=`find $(pwd) -name "*batchrun*html" -print`
-echo $fname
-echo "scp spot01:$fname /home/oahu/Oahu/Downloads/; explorer.exe Downloads " > /tmp/execstr_kag.sh
-echo done
-
+#NOTE moved to sh-mode open a *.sh file...
