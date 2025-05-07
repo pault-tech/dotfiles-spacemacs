@@ -3,8 +3,11 @@
 #key : jupyter_batchrun_utils_hints
 #contributor : Ubuntu
 # --
+
+# yas snippet name : jupyter_batchrun_utils_hints
+
 # batch run
-kernelname=`$*.ipynb`
+kernelname=\`$*.ipynb\`
 jupyter nbconvert --to notebook --execute --embed-images $kernelname.ipynb \
         --output=$kernelname.batchrun.ipynb
 
@@ -13,7 +16,7 @@ jupyter nbconvert --to html *.batchrun.ipynb
 echo done
 
 # transfer to laptop
-fname=`find $(pwd) -name "*batchrun*html" -print`
+fname=\`find $(pwd) -name "*batchrun*html" -print\`
 echo $fname
 echo "scp spot01:$fname /home/oahu/Oahu/Downloads/; explorer.exe Downloads " > /tmp/execstr_kag.sh
 echo done
