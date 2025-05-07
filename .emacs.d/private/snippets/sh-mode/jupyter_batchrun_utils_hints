@@ -18,6 +18,6 @@ echo done
 # transfer to laptop
 fname=\`find $(pwd) -name "*batchrun*html" -print\`
 echo $fname
-echo "scp spot01:$fname /home/oahu/Oahu/Downloads/; explorer.exe Downloads " > /tmp/execstr_kag.sh
+echo "scp spot01:$fname /home/oahu/Oahu/Downloads/; explorer.exe Downloads;  t 3 \"{alt+d}Downloads\"  " > /tmp/execstr_kag.sh
 echo done
 
