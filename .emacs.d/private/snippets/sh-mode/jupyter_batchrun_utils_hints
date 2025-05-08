@@ -13,11 +13,13 @@ jupyter nbconvert --to notebook --execute --embed-images $kernelname.ipynb \
 
 # convert to html
 jupyter nbconvert --to html *.batchrun.ipynb
+ls -lh *.batchrun.*
 echo done
 
 # transfer to laptop
 fname=\`find $(pwd) -name "*batchrun*html" -print\`
 echo $fname
 echo "scp spot01:$fname /home/oahu/Oahu/Downloads/; explorer.exe Downloads;  t 3 \"{alt+d}Downloads\"  " > /tmp/execstr_kag.sh
+cat /tmp/execstr_kag.sh
 echo done
 
