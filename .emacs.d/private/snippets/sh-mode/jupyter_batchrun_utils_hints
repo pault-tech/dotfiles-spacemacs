@@ -6,10 +6,13 @@
 
 # yas snippet name : jupyter_batchrun_utils_hints
 
+echo pip install papermill
+
 # batch run
 kernelname=\`$*.ipynb\`
 jupyter nbconvert --to notebook --execute --embed-images $kernelname.ipynb \
         --output=$kernelname.batchrun.ipynb
+papermill $kernelname.ipynb $kernelname.batchrun.ipynb
 
 # convert to html
 jupyter nbconvert --to html *.batchrun.ipynb
