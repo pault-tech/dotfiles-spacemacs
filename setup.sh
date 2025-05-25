@@ -99,6 +99,8 @@ ORG="pault-tech" #default self
 # set repos (gh repo list $ORG --limit 9999 --json name)
 repos=`(gh repo list --limit 9999 --json name)`
 repos_to_clone=`(echo $repos | jq -r ".[].name")`
+#TODO: fix this
+repos_to_clone="gh_utils"
 echo $repos_to_clone
 #
 sleep 5
