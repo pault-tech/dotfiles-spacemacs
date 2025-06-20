@@ -496,7 +496,9 @@ See variable `server-auth-dir' for details."
 
 (defun web-search-google (&optional search-type word)
   (interactive)
-  (let ((urlenc
+  (let (
+        (devcontainer-p (in-devcontainer-p))
+        (urlenc
          (url-encode-url word))
         (engine (if (eq search-type 'duckduckgo)
                     "https://duckduckgo.com/?t=ffab&q="
@@ -504,7 +506,8 @@ See variable `server-auth-dir' for details."
                   ;; "https://www.google.com/search?gbv=1&q="
                   ))
         )
-    (if (in-devcontainer-p)
+    (if (and devcontainer-p
+             (eq search-type 'duckduckgo))
         (eww-browse-url
          (concat
           engine
