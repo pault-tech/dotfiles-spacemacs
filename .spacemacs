@@ -545,7 +545,12 @@ It should only modify the values of Spacemacs settings."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.
    ;; (default '("rg" "ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
+   ;; dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
+   ;; NOTE: as of 2025/0922 started seeing the error
+   ;; (Spacemacs) Error in dotspacemacs/init: Variable: "dotspacemacs-search-tools" has value: "(rg ag pt ack grep)" that doesn’t match its type: "(set (const rg) (const ag) (const ack) (const grep))". Validator message: "(user-error Looking for `(set (const "rg") (const "ag") (const "ack") (const "grep"))' in `("pt")' failed because:
+   ;;   the following values don't match any of the options:
+   ;;     pt)"
+   dotspacemacs-search-tools '("rg" "ag" "ack" "grep")
 
    ;; Format specification for setting the frame title.
    ;; %a - the `abbreviated-file-name', or `buffer-name'
