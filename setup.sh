@@ -61,8 +61,10 @@ while true; do
   while [ $keygm == '']; do
     IFS= read -t300 -n1 -s -r -p $"Press space to continue" readkeygm
     keygm=$readkeygm
+    if [ $keygm == '']; then
     printf "\ntimed out... quiting and detaching sreen.\n"
     screen -D
+    fi
   done
 done
 EOM
