@@ -57,11 +57,12 @@ while true; do
   TERM=xterm-256color emacs -nw -l ~/custom.el;
   echo "restarting. use  rm -rf ~/.emacs.d/.cache/lsp to reset lsp server associations"
   #sleep 5;
-  IFS= read -t300 -n1 -s -r -p $"Press space to continue" keygm
-  if [ $keygm == '' ];then
+  keygm='' 
+  while [ $keygm == '']; do
+    IFS= read -t300 -n1 -s -r -p $"Press space to continue" keygm
     echo timed out... quiting and detaching sreen.
     screen -D
-  fi
+  done
 done
 EOM
 echo "$TXT" >> ~/emacs.sh
