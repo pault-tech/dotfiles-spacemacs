@@ -58,10 +58,11 @@ while true; do
   echo "restarting. use  rm -rf ~/.emacs.d/.cache/lsp to reset lsp server associations"
   #sleep 5;
   keygm='' 
-  while [ $keygm == '']; do
-    IFS= read -t300 -n1 -s -r -p $"Press space to continue" readkeygm
-    keygm=$readkeygm
-    if [ $keygm == '']; then
+  while [ -z "$keygm" ]; do
+    IFS= read -t300 -n 1 -s -r -p $"Press space to continue" readkeygm
+    sleep 5
+    keygm="$readkeygm"
+    if [[ -z "$keygm" ]]; then
     printf "\ntimed out... quiting and detaching sreen.\n"
     screen -D
     fi
