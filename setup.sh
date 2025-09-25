@@ -56,7 +56,12 @@ while true; do
   type pylsp || ( echo 'warning: pylsp not found for python mode, see .spacemacs for installation'  && sleep 5)
   TERM=xterm-256color emacs -nw -l ~/custom.el;
   echo "restarting. use  rm -rf ~/.emacs.d/.cache/lsp to reset lsp server associations"
-  sleep 5;
+  #sleep 5;
+  IFS= read -t300 -n1 -s -r -p $"Press space to continue" keygm
+  if [ $keygm == '' ];then
+    echo timed out... quiting and detaching sreen.
+    screen -D
+  fi
 done
 EOM
 echo "$TXT" >> ~/emacs.sh
