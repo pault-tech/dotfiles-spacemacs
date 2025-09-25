@@ -59,8 +59,9 @@ while true; do
   #sleep 5;
   keygm='' 
   while [ $keygm == '']; do
-    IFS= read -t300 -n1 -s -r -p $"Press space to continue" keygm
-    echo timed out... quiting and detaching sreen.
+    IFS= read -t300 -n1 -s -r -p $"Press space to continue" readkeygm
+    keygm=$readkeygm
+    printf "\ntimed out... quiting and detaching sreen.\n"
     screen -D
   done
 done
