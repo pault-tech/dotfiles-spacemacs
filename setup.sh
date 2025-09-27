@@ -58,13 +58,15 @@ while true; do
   echo "restarting. use  rm -rf ~/.emacs.d/.cache/lsp to reset lsp server associations"
   #sleep 5;
   keygm='' 
-  while [ -z "$keygm" ]; do
+  while [ -z "\$keygm" ]; do
     IFS= read -t300 -n 1 -s -r -p $"Press space to continue" readkeygm
-    sleep 5
-    keygm="$readkeygm"
-    if [[ -z "$keygm" ]]; then
+    keygm="\$readkeygm"
+    if [[ -z "\$keygm" ]]; then
     printf "\ntimed out... quiting and detaching sreen.\n"
     screen -D
+    else
+    printf "\nrestarting emacs...\n"
+    sleep 1 
     fi
   done
 done
@@ -184,7 +186,9 @@ function init_python_mode_deps {
 
     pip install 'python-lsp-server[all]'
 
-    pip install 'jupytext'
+    # pip install 'jupytext'
+    sudo apt install pipx -y
+    pipx install 'jupytext'
 
 }
 
