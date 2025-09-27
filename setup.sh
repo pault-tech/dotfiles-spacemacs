@@ -180,7 +180,7 @@ code --add ~/dotfiles-spacemacs
 
 }
 
-function init_pthon_mode_deps {
+function init_python_mode_deps {
 
     pip install 'python-lsp-server[all]'
 
@@ -222,7 +222,7 @@ elif [ "$1" == "sup" ]; then
     setup_dotfiles_spacemacs
     add_folders
     init_lsp_servers
-    init_pthon_mode_deps
+    init_python_mode_deps
 else
     echo setup_dotfiles_spacemacs
     echo NOTE: use setup.sh sup for full install including emacs
