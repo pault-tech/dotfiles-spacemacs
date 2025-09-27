@@ -187,6 +187,7 @@ function init_python_mode_deps {
     pip install 'python-lsp-server[all]'
 
     # pip install 'jupytext'
+    # PEP 668 prevents using pip after upgrading to ubuntu 24
     sudo apt install pipx -y
     pipx install 'jupytext'
 
