@@ -63,6 +63,7 @@ while true; do
     keygm="\$readkeygm"
     if [[ -z "\$keygm" ]]; then
     printf "\ntimed out... quiting and detaching sreen.\n"
+    # detach screen so that if this is idle, auto reconnect sp will eventually timeout and cron process will stop the idle instance 
     screen -D
     else
     printf "\nrestarting emacs...\n"
