@@ -549,7 +549,7 @@ See variable `server-auth-dir' for details."
                       ))
 
 ;; on idle quit emacs to allow aws instance to also idle and stop
-(run-with-idle-timer 600 nil 'kill-emacs)
+(run-with-idle-timer 1200 nil 'kill-emacs)
 
 (load-file "/workspaces/gh_utils/custom.el")
 
