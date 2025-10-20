@@ -455,6 +455,8 @@ See variable `server-auth-dir' for details."
   )
 
 (global-set-key "l" (lambda ()(interactive)(exec-sql 'no-prompt)))
+(spacemacs/set-leader-keys "ok" (lambda ()(interactive)(exec-sql 'no-prompt)))
+(spacemacs/set-leader-keys "od" (lambda ()(interactive)(exec-sql 'no-prompt)))
 
 
 
