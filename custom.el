@@ -396,7 +396,7 @@ See variable `server-auth-dir' for details."
                       (concat
                        (buffer-substring-no-properties (point) (mark))"\n")
                     ;; (if
-                    ;; jupyter notebook NOTE: this was abandoned in favor of setting paragraph-start regex for jupytext code cell
+                    ;; jupyter notebook/ipython NOTE: this was abandoned in favor of setting paragraph-start regex for jupytext code cell
                     ;; get-current-buffer-text-between-double-percent
                     (concat
                      exec-sql-exec-str-prefix
