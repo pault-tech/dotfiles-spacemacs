@@ -406,6 +406,16 @@ See variable `server-auth-dir' for details."
                     ;; )
                     )))
     ;; (debug)
+    (if (equal major-mode 'python-mode) ;;workaround for ipython to submit multiline code blocks containing blank lines as a single code block. Otherwise ipython evaluates before and above blank lines separately
+        (setq execstr
+              (replace-all
+               execstr
+               ;; "\n(\s*\n)+" "\n")
+               ;; "\\n\\ *\\n" "\\n")
+               "\n *\n" "\n")
+              ))
+    ;; (message execstr)
+    ;;
     ;; (if (exec-buffer-redirect-to (buffer-file-name))
     ;;     (setq buff (exec-buffer-redirect-to (buffer-file-name))))
     (if (or
@@ -560,3 +570,15 @@ See variable `server-auth-dir' for details."
   (if mark-active
       (buffer-substring (mark) (point))
     (thing-at-point 'symbol)))
+
+;; (defun tmp1 ()
+;;   (replace-all "i
+
+
+;; j"
+;;                ;; "\n *\n" "\n")
+;;                "\n\s*\n" "\n")
+;;   )
+;; (tmp1)
+;;
+;; (query-replace-regexp "\n *\n" "\n    #\n")
