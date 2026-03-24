@@ -110,7 +110,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      docker
-     kubernetes
+     ;; kubernetes
      ;; (helm :variables helm-use-fuzzy 'always)
      helm
      ;; lsp
