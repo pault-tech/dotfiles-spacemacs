@@ -110,6 +110,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      docker
+     eww
      ;; kubernetes
      ;; (helm :variables helm-use-fuzzy 'always)
      helm
