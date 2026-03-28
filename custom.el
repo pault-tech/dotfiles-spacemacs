@@ -538,11 +538,19 @@ See variable `server-auth-dir' for details."
 
 (defun web-search-google-that ()
   (interactive)
-  (web-search-google 'google (thing-at-point-or-point-mark)))
+  (let* (
+         (thing (thing-at-point-or-point-mark))
+         (search-str (read-string "Search text: " thing))
+         )
+    (web-search-google 'google search-str)))
 
 (defun web-search-duckduckgo-that ()
   (interactive)
-  (web-search-google 'duckduckgo (thing-at-point-or-point-mark)))
+  (let* (
+         (thing (thing-at-point-or-point-mark))
+         (search-str (read-string "Search text: " thing))
+         )
+    (web-search-google 'duckduckgo search-str)))
 
 
 (run-at-time 30 nil (lambda ()
@@ -562,6 +570,7 @@ See variable `server-auth-dir' for details."
 
 ;; on idle quit emacs to allow aws instance to also idle and stop
 (run-with-idle-timer 1200 nil 'kill-emacs)
+;; (run-with-idle-timer 3600 nil 'kill-emacs)
 
 (load-file "/workspaces/gh_utils/custom.el")
 
