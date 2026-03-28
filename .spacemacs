@@ -672,6 +672,19 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
 
+   '(safe-local-variable-values ;; added 3/28/2026 to avoid prompting on fresh emacs installs
+     '((python-shell-virtualenv-root . "/home/ubuntu/anaconda3/envs/pytorch_env")
+       (mysubmit-build-cmd . "a_build.sh")
+       ;;TODO: cleanup these variable names
+       (pktsubmit-build-cmd . "a_build.sh")
+       (fssubmit-build-cmd . "a_build.sh")
+       (typescript-backend . tide)
+       (typescript-backend . lsp)
+       (javascript-backend . tide)
+       (javascript-backend . tern)
+       (javascript-backend . lsp)
+       ))
+
    '(conda-env-autoactivate-mode t)
 
    ;; '(lsp-pylsp-plugins-pycodestyle-max-line-length 9999) ;; TODO
@@ -693,4 +706,5 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    )
+
   )
