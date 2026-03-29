@@ -555,7 +555,10 @@ See variable `server-auth-dir' for details."
 (defun codespace-open-current-directory-folder ()
   "open current file in codespace"
   (interactive)
-  (start-process "codespace-open" "*codespace-open*" "code" "-a" default-directory)
+  ;; (start-process "codespace-open" "*codespace-open*" "bash" "--login" "-c" (concat"source ~/.profile && code -a " default-directory))
+  ;; (start-process "codespace-open" "*codespace-open*" "bash" "--login" "-c" (concat" source ~/.profile && type -P code && set -x && /usr/local/bin/code -a "default-directory"."))
+  ;; TODO: this finds the first code binary in glob expansion as workaround
+  (start-process "codespace-open" "*codespace-open*" "bash" "--login" "-c" (concat" source ~/.profile && type -P code && set -x && set -- /vscode/bin/linux-x64/*4622/bin/remote-cli/code && $1 -a "default-directory"."))
   )
 
 (run-at-time 30 nil (lambda ()
