@@ -552,6 +552,11 @@ See variable `server-auth-dir' for details."
          )
     (web-search-google 'duckduckgo search-str)))
 
+(defun codespace-open-current-directory-folder ()
+  "open current file in codespace"
+  (interactive)
+  (start-process "codespace-open" "*codespace-open*" "code" "-a" default-directory)
+  )
 
 (run-at-time 30 nil (lambda ()
                       (setq vc-follow-symlinks t)
