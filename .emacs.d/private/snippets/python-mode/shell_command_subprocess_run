@@ -13,4 +13,5 @@ result = subprocess.run(
     text=True
 )
 
-print(f"result: {result.stdout.strip()}")
+print(f"result stdout: {result.stdout.strip()}")
+print(f"result stderr: {result.stderr.strip()}")
