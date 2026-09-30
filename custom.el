@@ -376,6 +376,46 @@ See variable `server-auth-dir' for details."
 
 
 
+(defun replace-once
+    (STRING REGEXP TO)
+  "replace the first occurance of REGEXP to
+TO in STRING and return the modified string"
+  (if            (string-match REGEXP STRING)
+      (let ((
+             start               (string-match REGEXP STRING))
+            (end                 (match-end 0))
+            )
+        (concat
+         (substring
+          STRING
+          0
+          start
+          )
+         TO
+         (substring
+          STRING
+          end
+          )))
+    STRING))
+
+;;utilized by exec-sql
+(defun replace-all
+    (STRING REGEXP TO)
+  "replace all occurances of REGEXP to
+TO in STRING and return the modified string"
+  (if STRING (let (
+                   (al0 0)
+                   (al1 1)
+                   )
+               (if               (string-match REGEXP STRING)
+                   (while
+                       (or
+                        (< al0 al1 )
+                        (setq al1 (string-match REGEXP STRING)))
+                     (setq STRING (replace-once STRING REGEXP TO))
+                     (setq al0 al1 )
+                     ))
+               (setq STRING STRING))))
 
 
 (defvar exec-sql-exec-str-prefix "")
