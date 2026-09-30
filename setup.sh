@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 # usage:
 #
@@ -114,7 +115,11 @@ ORG="pault-tech" #default self
 repos=`(gh repo list --limit 9999 --json name)`
 repos_to_clone=`(echo $repos | jq -r ".[].name")`
 #TODO: fix this
-repos_to_clone="gh_utils"
+repos_to_clone=(
+    "gh_utils"
+    "/workspaces/csci-e-101"
+    "/workspaces/OpenDevin"
+)
 echo $repos_to_clone
 #
 sleep 5
@@ -177,10 +182,10 @@ function add_folders {
 
 # code --help
 
-code --add /workspaces/gh_utils
-code --add /workspaces/csci-e-101
-code --add /workspaces/OpenDevin
-code --add ~/dotfiles-spacemacs
+code --add /workspaces/gh_utils   \
+--add /workspaces/csci-e-101 \
+--add /workspaces/OpenDevin  \
+--add ~/dotfiles-spacemacs   \
 
 }
 
