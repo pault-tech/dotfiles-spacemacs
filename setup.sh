@@ -117,8 +117,8 @@ repos_to_clone=`(echo $repos | jq -r ".[].name")`
 #TODO: fix this
 repos_to_clone=(
     "gh_utils"
-    "/workspaces/csci-e-101"
-    "/workspaces/OpenDevin"
+    "csci-e-101"
+    "OpenDevin"
 )
 echo $repos_to_clone
 #
